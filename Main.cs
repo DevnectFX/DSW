@@ -2,10 +2,11 @@ using System;
 
 namespace DSW
 {
-	public class MyClass
+	public class Main
 	{
-		public MyClass ()
+		public Main ()
 		{
+			/// 123
 		}
 	}
 }
