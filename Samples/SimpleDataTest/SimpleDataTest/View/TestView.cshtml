@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>티스토리:Tistory - 수 많은 사람들의 상상력</title>
+<link rel="stylesheet" type="text/css" href="Css/Stylesheet.css" />
+<script type="text/javascript">
+	function focusonInput(e){
+		var target = document.getElementById('inputSafePW');
+		target.style.background = "none";
+	}
+
+	function checkLogin() {
+		var form = document.getElementById("LoginForm");
+		if(form.loginid.value == "") {
+			document.getElementById("ErrorMessage").innerHTML = "이메일 주소를 입력해주세요";
+			form.loginid.focus();
+			return false;
+		}
+		if(form.password.value == "") {
+			document.getElementById("ErrorMessage").innerHTML = "비밀번호를 입력해주세요";
+			form.password.focus();
+			return false;
+		}
+		if(form.captcha && form.captcha.value == "") {
+			document.getElementById("ErrorMessage").innerHTML = "보안문자를 입력해주세요";
+			form.captcha.focus();
+			return false;
+		}
+		return true;
+	}
+
+	function changeCaptchaImg(){
+	}
+</script>
+</head>
+
+<body id="index">
+	<form id="LoginForm" method="post" action="" onsubmit="return checkLogin()">
+	<input type="hidden" name="requestURI" value="http://devnect.tistory.com/admin/center/" />
+	<input type="hidden" name="goDaum" value="false" />
+	<div id="login_container">
+		<div class="login_box">
+			<div class="login_input">
+				<input type="text" name="loginid" value="" maxlength="64" tabindex="1"/>
+				<input type="password" name="password" maxlength="64" tabindex="2" />
+				<script type="text/javascript">
+					document.getElementById("LoginForm").loginid.focus();
+				</script>
+			</div>
+			<input type="submit" class="loginBtn" value="로그인"/>
+
+			<div class="emailSaveChk">
+				<input type="checkbox" name="save" id="saveEmail" tabindex="4"/>
+				<label for="saveEmail" title="방문할 때마다 이메일을 입력하는 수고를 덜어줍니다">이메일 저장</label>
+				<span class="vBar">|</span>
+				<span class="p11 d_999"><a href="http://www.tistory.com/member/findID" class="p11 d_999" title="아이디 찾기">아이디</a> &middot; <a href="http://www.tistory.com/member/resetPass" class="p11 d_999" title="비밀번호 찾기">비밀번호</a> 찾기</span>
+			</div>
+			<p id="ErrorMessage" class="error"></p>
+			<p class="p11 d_999">티스토리에 Daum 메일 아이디로 가입하셨다면?</p>
+			<p style="padding:5px 0 10px 0;"><a href="http://login.daum.net/accounts/loginform.do?daumauth=1&url=http%3A%2F%2Fdevnect.tistory.com%2Flogin%3FrequestURI%3Dhttp%253A%252F%252Fdevnect.tistory.com%252Fadmin%252Fcenter%252F%26throughDaum%3Dtrue" class="daumIdLogin" title="Daum아이디로 로그인하기">Daum아이디로 로그인하기</a></p>
+		</div>
+		<div class="login_copy p11 d_999">
+			<p><a href="http://www.tistory.com/invitation/" class="getInv" title="티스토리 초대장 받으러가기">티스토리 초대장 받으러가기</a></p>
+			<p class="copyLink">Copyright (c) <a href="http://info.daum.net/" target="_blank" class="p11 d_999" title="다음">Daum Communications.</a> All rights reserved.</p>
+		</div>
+	</div>
+	</form>
+</body>
+</html>

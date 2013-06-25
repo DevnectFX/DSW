@@ -1,0 +1,50 @@
+﻿	body{ font:0.75em/1.5em dotum, Verdana; color:#666; margin:35px 0 0 0;}
+	strong	{letter-spacing: -1px;}
+	a:link{color:#666; text-decoration:none;}
+	a:visited{color:#666; text-decoration:none;}
+	a:hover{color:#666; text-decoration:underline;}
+	a:active{color:#666;}
+	a.u:link {text-decoration:underline;}
+	a.u:link {text-decoration:underline;}
+	a.u:visited {text-decoration:underline;}
+	a.u:hover, a.u:active {text-decoration:underline;}
+	a.uEmp { color: #F35F21; text-decoration: underline; }
+	.vBar { color:#DDD; }
+	dl, dt, dd{margin:0; padding:0;}
+	form { margin:0; padding:0;}
+	img {border:0;}
+	hr{ display:none;}
+	input, label { vertical-align:middle;}
+	.p11 { font: 11px dotum; }
+	.p11Nar { font: 11px dotum; letter-spacing: -1px; }
+	.darkTxt { color: #333; }
+	.norTxt { color: #666; }
+	.dimTxt { color: #999; }
+	.empTxt { color: #F35F21; }
+	.fl { float:left; }
+	.fr { float:right; }
+	/* 로그인 페이지 */
+	#login_container { background:url(/Images/Car.jpg) no-repeat; width:466px; margin:0 auto; padding:184px 0 0 0; }
+	#login_container .p11 { font:11px dotum; }
+	#login_container a.p11:hover { font:11px dotum; }
+	#login_container .d_999 { color:#999; }
+	#login_container a.d_999:hover { color:#999; }
+	#login_container p { padding:0; margin:0; }
+	#login_container div.login_box { background:url(/image/login/ti_login_bg2.gif) repeat-y; width:366px; padding:10px 0 0 100px; }
+	#login_container div.login_box input.loginBtn { background:url(/image/login/btn_tistory_login.gif) no-repeat; display:block; text-indent:-1000em; width:48px; height:46px; overflow:hidden; padding:0; margin:4px 0 0 0; border:0; cursor:pointer; float:left; }
+	#login_container div.login_input input { border:1px solid #e2e2e2; width:186px; height:14px; margin:2px 2px 3px 2px; padding:2px; }
+	#login_container div.login_input { float:left; padding:0 10px 0 0; width: 190px; }
+	#login_container div.login_box input.chkbox { width:18px; height:14px; vertical-align:middle; margin:0 0 2px 0; }
+	#login_container div.login_box label { cursor:pointer; font:11px dotum; color:#999; }
+	#login_container div.login_box div.emailSaveChk { clear:both; padding:7px 0 0 0; background:url(/image/login/dot_line.gif) repeat-x bottom; width:260px; height:25px; }
+	#login_container div.login_box p { padding:10px 0 0 0; text-align:center; width:260px;}
+	#login_container div.login_box p a.daumIdLogin { background:url(/image/login/btn_tistory_daumid.gif) no-repeat; display:block; text-indent:-1000em; width:146px; height:20px; margin:0 auto; overflow:hidden; }
+	#login_container div.login_box .error { color:#FF6633; padding:5px 0 0 0; }
+	#login_container div.login_copy { background:url(/image/login/ti_login_bg3.gif) no-repeat; padding:18px 0 0 0; text-align:center; }
+	#login_container div.login_copy p.copyLink { padding:15px 0 0 0; }
+	#login_container .vBar { font:11px dotum; color:#DDD; }
+	#login_container a.getInv { background:url(/image/login/ic_mail.gif) no-repeat; font:11px dotum; color:#666; padding:0 0 0 17px; }
+	#login_container div.login_box div.safe_password { clear:both; padding:15px 0 0 2px; background:url(/image/login/dot_line.gif) repeat-x bottom; width:260px; height:111px; }
+	#login_container div.login_box div.safe_password .input_safe_pw {margin-bottom:7px; padding:0; border:1px solid #E2E2E2; height:17px; width:183px;background:url("http://i1.daumcdn.net/cfs.tistory/static/personal/img_input_pic_txt.gif") no-repeat scroll -1px center transparent;}
+	#login_container div.login_box div.safe_password a.btn_refresh {background:url("http://i1.daumcdn.net/cfs.tistory/static/personal/btn_replay.gif") no-repeat scroll center center transparent; width:57px; height:20px; display:inline-block;}
+	#login_container div.login_box div.safe_password span {display:block;height:15px;font-size:11px;color:#999; margin:2px 0 0;padding-left:16px;background:url("http://i1.daumcdn.net/cfs.tistory/static/personal/ico_caution2.gif") no-repeat scroll 0 center transparent;}
