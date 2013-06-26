@@ -11,7 +11,7 @@ namespace DSW.Sources
 			base.ConfigureConventions(nancyConventions);
 
 			Conventions.StaticContentsConventions.Add(
-				StaticContentConventionBuilder.AddDirectory("WebContents", "WebContents")
+				StaticContentConventionBuilder.AddDirectory("", "WebContents", new string[] { "css", "js", "png", "gif", "jpg" })
 			);
 		}
 	}
