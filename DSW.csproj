@@ -9,7 +9,6 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>DSW</RootNamespace>
     <AssemblyName>DSW</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,7 +19,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <LangVersion>5</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -29,7 +27,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <LangVersion>5</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -72,9 +69,6 @@
     <Reference Include="Simple.Data.Sqlite">
       <HintPath>packages\Simple.Data.Sqlite.0.18.3.1\lib\net40\Simple.Data.Sqlite.dll</HintPath>
     </Reference>
-    <Reference Include="Common.Logging">
-      <HintPath>packages\Common.Logging.2.0.0\lib\2.0\Common.Logging.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
@@ -91,14 +85,20 @@
     <None Include="app.config" />
     <None Include="x64\SQLite.Interop.dll" />
     <None Include="x86\SQLite.Interop.dll" />
-    <None Include="Views\Test.cshtml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="WebContents\test.js" />
+    <None Include="Views\Test.cshtml" />
+    <None Include="Views\Test\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Sources\" />
     <Folder Include="Sources\Modules\" />
     <Folder Include="Views\" />
     <Folder Include="WebContents\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
+  <Import Project="exports.xml" />
+  <Target Name="CopyExportFiles" AfterTargets="Build">
+    <Message Text="Copy Export Files : @(ExportFile-&gt;'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
+    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile-&gt;'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+  </Target>
 </Project>
