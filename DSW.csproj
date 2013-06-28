@@ -629,7 +629,7 @@
     <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile-&gt;'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
   </Target>
   <Target Name="ClearExportFiles" AfterTargets="Clean">
-	<Message Text="Remove Export Directories : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
+	<Message Text="Remove Export Directory : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
 	<RemoveDir Directories="$(TargetDir)%(ExportFile.PrefixPath)" />
   </Target>
 </Project>
