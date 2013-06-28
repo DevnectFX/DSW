@@ -17,7 +17,7 @@ namespace DSW
 			host.Start();
 			Console.ReadLine();
 			host.Stop();
-			Console.WriteLine("Stopped Nancy Self Hosting.");
+			Console.WriteLine("Stopped DSW Self Hosting.");
 		}
 	}
 }
