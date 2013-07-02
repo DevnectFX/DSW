@@ -78,6 +78,7 @@
     <Compile Include="Sources\Modules\TestModule.cs" />
     <Compile Include="Sources\SelfHostingStartup.cs" />
     <Compile Include="Sources\DSWBoostrapper.cs" />
+    <Compile Include="Sources\Core\ViewEngines\DSWRazorViewBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -622,6 +623,8 @@
     <Folder Include="WebContents\" />
     <Folder Include="Views\Test\" />
     <Folder Include="WebContents\common\" />
+    <Folder Include="Sources\Core\" />
+    <Folder Include="Sources\Core\ViewEngines\" />
   </ItemGroup>
   <Import Project="exports.xml" />
   <Target Name="CopyExportFiles" AfterTargets="Build">
@@ -629,7 +632,7 @@
     <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile-&gt;'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
   </Target>
   <Target Name="ClearExportFiles" AfterTargets="Clean">
-	<Message Text="Remove Export Directory : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
-	<RemoveDir Directories="$(TargetDir)%(ExportFile.PrefixPath)" />
+    <Message Text="Remove Export Directory : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
+    <RemoveDir Directories="$(TargetDir)%(ExportFile.PrefixPath)" />
   </Target>
 </Project>

@@ -1,9 +1,9 @@
-
+@inherits DSW.ViewEngines.Razor.DSWRazorViewBase<dynamic>
 <html>
 	<head>
 		<title>@DateTime.Now</title>
 	</head>
 	<body>
-	!@RenderSection("", false)!
+	!@this!
 	</body>
 </html>
