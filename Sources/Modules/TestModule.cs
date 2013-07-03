@@ -7,10 +7,14 @@ namespace DSW.Modules
 	public class TestModule : NancyModule
 	{
 		public TestModule()
-			: base("/test")
+			: base("/")
 		{
 			Get["/"] = _ => {
-				return View["Test"];
+				return View["Test2"];
+			};
+
+			Get["/test/test"] = _ => {
+				return View["Test/Test"];
 			};
 		}
 	}

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -72,6 +72,7 @@
     <Reference Include="log4net">
       <HintPath>packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,15 +80,18 @@
     <Compile Include="Sources\SelfHostingStartup.cs" />
     <Compile Include="Sources\DSWBoostrapper.cs" />
     <Compile Include="Sources\Core\ViewEngines\DSWRazorViewBase.cs" />
+    <Compile Include="Sources\Core\Model\LayoutViewModel.cs" />
+    <Compile Include="Sources\Core\StringExtention.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="x64\SQLite.Interop.dll" />
     <None Include="x86\SQLite.Interop.dll" />
-    <None Include="Views\Test.cshtml" />
     <None Include="Views\Test\Test.cshtml" />
     <None Include="packages.config" />
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="WebContents\common\kendoui.web\js\jquery.min.js" />
     <None Include="WebContents\common\kendoui.web\js\kendo.autocomplete.min.js" />
     <None Include="WebContents\common\kendoui.web\js\kendo.binder.min.js" />
@@ -615,17 +619,11 @@
     <None Include="WebContents\common\kendoui.web\typescript\kendo.web.d.ts" />
     <None Include="WebContents\common\kendoui.web\vsdoc\kendo.web-vsdoc.js" />
     <None Include="WebContents\common\kendoui.web\vsdoc\kendo.web.min.intellisense.js" />
+    <None Include="Views\Test2.cshtml" />
+    <None Include="Views\Test\TestLayout.cshtml" />
+    <None Include="Views\Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sources\" />
-    <Folder Include="Sources\Modules\" />
-    <Folder Include="Views\" />
-    <Folder Include="WebContents\" />
-    <Folder Include="Views\Test\" />
-    <Folder Include="WebContents\common\" />
-    <Folder Include="Sources\Core\" />
-    <Folder Include="Sources\Core\ViewEngines\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="exports.xml" />
   <Target Name="CopyExportFiles" AfterTargets="Build">
     <Message Text="Copy Export Files : @(ExportFile-&gt;'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />

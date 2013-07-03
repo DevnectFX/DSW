@@ -11,7 +11,7 @@ namespace DSW
 
 		public static void Main(String[] args)
 		{
-			var host = new NancyHost(new Uri("http://localhost"));
+			var host = new NancyHost(new Uri("http://localhost/"));
 
 			Console.WriteLine("Starting DSW Self Hosting... Service Port : 80");
 			host.Start();
