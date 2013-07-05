@@ -42,15 +42,6 @@
     <Reference Include="Nancy.ViewEngines.Razor">
       <HintPath>packages\Nancy.Viewengines.Razor.0.17.1\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject">
-      <HintPath>packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
-    </Reference>
-    <Reference Include="Ninject.Extensions.ChildKernel">
-      <HintPath>packages\Ninject.Extensions.ChildKernel.3.0.0.5\lib\net40\Ninject.Extensions.ChildKernel.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy.Bootstrappers.Ninject">
-      <HintPath>packages\Nancy.Bootstrappers.Ninject.0.17.1\lib\net40\Nancy.Bootstrappers.Ninject.dll</HintPath>
-    </Reference>
     <Reference Include="Nancy.Authentication.Forms">
       <HintPath>packages\Nancy.Authentication.Forms.0.17.1\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
     </Reference>
@@ -72,7 +63,18 @@
     <Reference Include="log4net">
       <HintPath>packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="EPPlus">
+      <HintPath>packages\PdfReport.2.0\lib\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>packages\PdfReport.2.0\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>packages\PdfReport.2.0\lib\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfRpt">
+      <HintPath>packages\PdfReport.2.0\lib\PdfRpt.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,7 +83,9 @@
     <Compile Include="Sources\DSWBoostrapper.cs" />
     <Compile Include="Sources\Core\ViewEngines\DSWRazorViewBase.cs" />
     <Compile Include="Sources\Core\Model\LayoutViewModel.cs" />
-    <Compile Include="Sources\Core\StringExtention.cs" />
+    <Compile Include="Sources\Modules\AdminModule.cs" />
+    <Compile Include="Sources\Core\DSWModule.cs" />
+    <Compile Include="Sources\Core\Extention\StringExtention.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -622,6 +626,14 @@
     <None Include="Views\Test2.cshtml" />
     <None Include="Views\Test\TestLayout.cshtml" />
     <None Include="Views\Layout.cshtml" />
+    <None Include="WebContents\common\bootstrap\css\bootstrap-responsive.css" />
+    <None Include="WebContents\common\bootstrap\css\bootstrap-responsive.min.css" />
+    <None Include="WebContents\common\bootstrap\css\bootstrap.css" />
+    <None Include="WebContents\common\bootstrap\css\bootstrap.min.css" />
+    <None Include="WebContents\common\bootstrap\img\glyphicons-halflings-white.png" />
+    <None Include="WebContents\common\bootstrap\img\glyphicons-halflings.png" />
+    <None Include="WebContents\common\bootstrap\js\bootstrap.js" />
+    <None Include="WebContents\common\bootstrap\js\bootstrap.min.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="exports.xml" />
@@ -633,4 +645,8 @@
     <Message Text="Remove Export Directory : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
     <RemoveDir Directories="$(TargetDir)%(ExportFile.PrefixPath)" />
   </Target>
+  <ItemGroup>
+    <Folder Include="Sources\Core\Extention\" />
+    <Folder Include="WebContents\common\bootstrap\" />
+  </ItemGroup>
 </Project>

@@ -1,10 +1,11 @@
 using System;
 using Nancy;
+using DSW;
 
 
 namespace DSW.Modules
 {
-	public class TestModule : NancyModule
+	public class TestModule : DSWModule
 	{
 		public TestModule()
 			: base("/")

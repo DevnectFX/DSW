@@ -3,7 +3,8 @@ using Nancy.ViewEngines.Razor;
 using Nancy.ViewEngines;
 using System.Linq;
 using DSW.Model;
-using DSW.Core;
+using DSW;
+using DSW.Extention;
 
 
 namespace DSW.ViewEngines.Razor
@@ -24,14 +25,12 @@ namespace DSW.ViewEngines.Razor
 		private static string GetLayout(IRenderContext renderContext)
 		{
 			var path = renderContext.Context.Request.Path;
-			Console.WriteLine(path);
 			var header = path.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-			Console.WriteLine(header.Length);
 			string result = "/";
 			if (header.Length > 0)
 				result = "/" + header[1] + "/" + header[1].ToFirstUpper();
 			result += "Layout.cshtml";
-			Console.WriteLine(result);
+
 			return result;
 		}
 	}
