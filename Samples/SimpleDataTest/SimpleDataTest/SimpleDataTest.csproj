@@ -36,13 +36,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="IBatisNet.Common">
-      <HintPath>..\..\..\..\Users\SuperDev\Downloads\IBatis\Ibatis.DataMapper.1.6.2.bin\IBatisNet.Common.dll</HintPath>
+      <HintPath>..\packages\Mybatis\IBatisNet.Common.dll</HintPath>
     </Reference>
     <Reference Include="IBatisNet.DataMapper">
-      <HintPath>..\..\..\..\Users\SuperDev\Downloads\IBatis\Ibatis.DataMapper.1.6.2.bin\IBatisNet.DataMapper.dll</HintPath>
+      <HintPath>..\packages\Mybatis\IBatisNet.DataMapper.dll</HintPath>
     </Reference>
     <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.0.17.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Forms">
+      <HintPath>..\packages\Nancy.Authentication.Forms.0.17.1\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.Hosting.Self">
       <HintPath>..\packages\Nancy.Hosting.Self.0.17.1\lib\net40\Nancy.Hosting.Self.dll</HintPath>
@@ -117,7 +120,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
