@@ -634,6 +634,7 @@
     <None Include="WebContents\common\bootstrap\img\glyphicons-halflings.png" />
     <None Include="WebContents\common\bootstrap\js\bootstrap.js" />
     <None Include="WebContents\common\bootstrap\js\bootstrap.min.js" />
+    <None Include="Tools\sqlite3.exe" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="exports.xml" />
@@ -648,5 +649,6 @@
   <ItemGroup>
     <Folder Include="Sources\Core\Extention\" />
     <Folder Include="WebContents\common\bootstrap\" />
+    <Folder Include="Tools\" />
   </ItemGroup>
 </Project>

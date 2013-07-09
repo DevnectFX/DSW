@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tm:TermDictionary xmlns:tm="http://exerd.com/term-model" version="1.1">
+  <term name="사용자" description="사용자" physicalName="USER" physicalDescription="사용자"/>
+  <term name="아이디" description="아이디" physicalName="ID" physicalDescription="아이디"/>
+</tm:TermDictionary>

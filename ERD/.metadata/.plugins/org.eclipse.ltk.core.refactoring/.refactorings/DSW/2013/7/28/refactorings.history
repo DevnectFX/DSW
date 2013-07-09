@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="자원 &apos;Test/untitled.exerd&apos;을(를) &apos;common.exerd&apos;(으)로 이름 바꾸기" description="&apos;untitled.exerd&apos; 자원 이름 바꾸기" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="untitled.exerd" name="common.exerd" stamp="1373264839152" updateReferences="true"/>
+</session>

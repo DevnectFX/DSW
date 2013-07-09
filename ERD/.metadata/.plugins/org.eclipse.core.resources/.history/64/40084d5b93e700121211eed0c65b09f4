@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tm:TermDictionary xmlns:tm="http://exerd.com/term-model" version="1.1">
+  <term name="사용자" description="사용자" physicalName="USER" physicalDescription="User"/>
+  <term name="아이디" description="아이디" physicalName="ID" physicalDescription="ID"/>
+  <term name="이름" description="이름" physicalName="NAME" physicalDescription="Name"/>
+  <term name="암호" description="암호" physicalName="PASSWD" physicalDescription="Password"/>
+  <term name="순번" description="순번" physicalName="SEQ" physicalDescription="Sequence"/>
+  <term name="시각" description="시각" physicalName="DT" physicalDescription="Time"/>
+  <term name="로그인" description="로그인" physicalName="LOGIN" physicalDescription="Login"/>
+  <term name="이력" description="이력" physicalName="HIST" physicalDescription="History"/>
+  <term name="변경" description="변경" physicalName="CHNG" physicalDescription="Change"/>
+  <term name="사용" description="사용" physicalName="USE" physicalDescription="Use"/>
+  <term name="유무" description="유무" physicalName="YN" physicalDescription="Yes or No"/>
+</tm:TermDictionary>
