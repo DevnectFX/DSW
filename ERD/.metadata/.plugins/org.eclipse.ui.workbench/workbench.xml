@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="14" version="2.0">
+<workbench progressCount="12" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="442" y="92">
 <fastViewData fastViewLocation="1024"/>
@@ -33,10 +33,10 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="W:/DevnectFX/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="W:/DevnectFX/DSW/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/common.exerd"/>
 </editor>
-<editor id="com.tomato.exerd.editor.DiagramEditor" name="common.erdx" partName="common.erdx" path="W:/DevnectFX/ERD/DSW/common.erdx" title="common.erdx" tooltip="DSW/common.erdx" workbook="DefaultEditorWorkbook">
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="common.erdx" partName="common.erdx" path="W:/DevnectFX/DSW/ERD/DSW/common.erdx" title="common.erdx" tooltip="DSW/common.erdx" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/common.erdx"/>
 </editor>
 <editor id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" partName="dsw.xdic" path="W:/DevnectFX/ERD/DSW/dsw.xdic" title="dsw.xdic" tooltip="DSW/dsw.xdic" workbook="DefaultEditorWorkbook">
@@ -193,15 +193,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common_ibm2.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/DSW/common.erdx"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
 </editors>
-<item historyLabel="common.exerd" index="1"/>
-<item historyLabel="dsw.xdic" index="0"/>
-<item historyLabel="common.exerd" index="1"/>
-<item historyLabel="dsw.xdic" index="0"/>
-<item historyLabel="common.exerd" index="1"/>
-<item historyLabel="dsw.xdic" index="0"/>
-<item historyLabel="common.exerd" index="1"/>
-<item historyLabel="dsw.xdic" index="0"/>
 <item historyLabel="common.exerd" index="1"/>
 <item historyLabel="dsw.xdic" index="0"/>
 <item historyLabel="common.exerd" index="1"/>
@@ -249,6 +243,16 @@
 <item historyLabel="common.erdx" index="7"/>
 <item historyLabel="common.exerd" index="1"/>
 <item historyLabel="common.erdx" index="7"/>
+<item historyLabel="common.exerd" index="1"/>
+<item historyLabel="common.erdx" index="9">
+<position/>
+</item>
+<item historyLabel="common.exerd" index="1"/>
+<item historyLabel="common.erdx" index="10"/>
+<item historyLabel="common.exerd" index="1"/>
+<item historyLabel="common.erdx" index="10"/>
+<item historyLabel="common.exerd" index="1"/>
+<item historyLabel="common.erdx" index="10"/>
 <item active="true" historyLabel="common.exerd" index="1"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -267,11 +271,11 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="common.erdx" tooltip="DSW/common.erdx">
+<persistable path="/DSW/common.erdx"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" tooltip="DSW/dsw.xdic">
 <persistable path="/DSW/dsw.xdic"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common.erdx" tooltip="DSW/common.erdx">
-<persistable path="/DSW/common.erdx"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common_ibm2.exerd" tooltip="DSW/common_ibm2.exerd">
 <persistable path="/DSW/common_ibm2.exerd"/>

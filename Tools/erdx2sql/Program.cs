@@ -8,6 +8,13 @@ using System.Text.RegularExpressions;
 
 namespace erdx2sql
 {
+    struct SharedData
+    {
+        public bool IsPrimaryKey { get; set; }
+        public bool IsForeignKey { get; set; }
+        public string primaryKeys { get; set; }
+    }
+
     /// <summary>
     /// eXERD의 erdx파일을 분석해 생성쿼리를 만드는 유틸리티
     /// 현재 버젼은 sqlite만 지원한다.
@@ -16,9 +23,6 @@ namespace erdx2sql
     {
         static void Main(string[] args)
         {
-            if (args == null || args.Length == 0)
-                args = new string[] { @"w:\DevnectFX\ERD\DSW\common.erdx" };
-
             // 헤더 출력
             PrintHeader();
 
@@ -41,7 +45,8 @@ namespace erdx2sql
             var dom = new XmlDocument();
             dom.LoadXml(xml);
             var output = new StringBuilder();
-            ParseNode(dom, output);
+            var sharedData = new SharedData();
+            ParseNode(dom, output, ref sharedData);
 
             // 만든 생성 쿼리를 파일로 저장한다.
             if (args.Length == 1)
@@ -67,7 +72,7 @@ namespace erdx2sql
             return result;
         }
 
-        private static void ParseNode(XmlNode pnode, StringBuilder output)
+        private static void ParseNode(XmlNode pnode, StringBuilder output, ref SharedData sharedData)
         {
             string comma = "";
             foreach (XmlNode node in pnode.ChildNodes)
@@ -83,28 +88,44 @@ CREATE TABLE {0} (";
                 }
                 if (node.Name == "columns")
                 {
-                    string columnName = node.Attributes["physicalName"].Value;
-                    var domainNode = GetDomainNode(pnode.OwnerDocument, node.Attributes["domain"].Value);
-                    var type = domainNode.Attributes["suggestedDataType"];
-                    var notnull = node.Attributes["notNull"] == null || node.Attributes["notNull"].Value == "FALSE" ? "" : "NOT NULL";
-                    if (type == null)
-                        type = domainNode.ParentNode.Attributes["suggestedDataType"];
-                    var f = @"{3}
-   {0} {1} {2}";
-                    output.AppendFormat(f, columnName, type.Value, notnull, comma);
-                    comma = ",";
                 }
-                
+
                 if (node.HasChildNodes == true)
-                    ParseNode(node, output);
+                    ParseNode(node, output, ref sharedData);
                 
                 // 후처리
                 if (node.Name == "tables")
                 {
+                    if (sharedData.primaryKeys != "")
+                        output.Append(",").AppendLine().Append("   PRIMARY KEY(" + sharedData.primaryKeys + ")");
                     output.AppendLine().Append(");");
+                    sharedData = new SharedData();
                 }
                 if (node.Name == "columns")
                 {
+                    string notnull = "";
+                    string columnName = node.Attributes["physicalName"].Value;
+                    if (sharedData.IsPrimaryKey == true)
+                    {
+                        sharedData.primaryKeys += (string.IsNullOrEmpty(sharedData.primaryKeys) == true ? "" : ", ") + columnName;
+                        sharedData.IsPrimaryKey = false;
+                        notnull = "NOT NULL";
+                    }
+                    var domainNode = GetDomainNode(pnode.OwnerDocument, node.Attributes["domain"].Value);
+                    var type = domainNode.Attributes["suggestedDataType"];
+                    notnull = (node.Attributes["notNull"] == null || node.Attributes["notNull"].Value == "FALSE") && notnull == "" ? "" : " NOT NULL";
+                    if (type == null)
+                        type = domainNode.ParentNode.Attributes["suggestedDataType"];
+                    var f = @"{0}
+   {1} {2}{3}";
+                    output.AppendFormat(f, comma, columnName, type.Value, notnull);
+                    comma = ",";
+                }
+                if (node.Name == "value" && node.ParentNode.Name == "memberships")
+                {
+                    var type = node.Attributes["xsi:type"].Value;
+                    if (type == "e:PrimaryKeyMembership")
+                        sharedData.IsPrimaryKey = true;
                 }
             }
         }

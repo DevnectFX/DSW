@@ -202,23 +202,19 @@
               derivedLogicalName="true"/></columnGroups></tables><tables UUID="Table_YS1a4OeSEeKuFeb9mp7pmQ"
           logicalName="사용자변경이력" physicalName="UseChangeHistory"><physicalProperties
             xsi:type="sqlserver:TableProperties"/><columns UUID="Column_YS1a4eeSEeKuFeb9mp7pmQ"
-            logicalName="사용자아이디" physicalName="USER_ID" domain="//@configuration/@domainDefinition/@domain.1/@domain.0"><physicalProperties
-              xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/></physicalProperties><memberships
+            logicalName="사용자아이디" physicalName="USER_ID" domain="//@configuration/@domainDefinition/@domain.1/@domain.0"><memberships
               key="PKCGroup_YS1a5OeSEeKuFeb9mp7pmQ"><value xsi:type="e:PrimaryKeyMembership"
                 group="PKCGroup_YS1a5OeSEeKuFeb9mp7pmQ" entryIndex="0"/></memberships><memberships
               key="FKCGroup_pqzzUOeSEeKuFeb9mp7pmQ"><value xsi:type="e:ColumnReference"
                 group="FKCGroup_pqzzUOeSEeKuFeb9mp7pmQ" entryIndex="0" parentColumn="Column_GCd3UOeREeKuFeb9mp7pmQ"/></memberships></columns><columns
             UUID="Column_YS1a4ueSEeKuFeb9mp7pmQ" logicalName="순번" physicalName="SEQ"
-            domain="//@configuration/@domainDefinition/@domain.0/@domain.0"><physicalProperties
-              xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/><identity
-                startWith="1" incrementBy="1"/></physicalProperties><memberships key="PKCGroup_YS1a5OeSEeKuFeb9mp7pmQ"><value
-                xsi:type="e:PrimaryKeyMembership" group="PKCGroup_YS1a5OeSEeKuFeb9mp7pmQ"
-                entryIndex="0"/></memberships></columns><columns UUID="Column_dKodAOeiEeKuFeb9mp7pmQ"
-            logicalName="변경아이디" physicalName="CHNG_ID" domain="//@configuration/@domainDefinition/@domain.1/@domain.0"
-            notNull="TRUE"><physicalProperties xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/></physicalProperties></columns><columns
+            domain="//@configuration/@domainDefinition/@domain.0/@domain.0"><memberships
+              key="PKCGroup_YS1a5OeSEeKuFeb9mp7pmQ"><value xsi:type="e:PrimaryKeyMembership"
+                group="PKCGroup_YS1a5OeSEeKuFeb9mp7pmQ" entryIndex="0"/></memberships></columns><columns
+            UUID="Column_dKodAOeiEeKuFeb9mp7pmQ" logicalName="변경아이디" physicalName="CHNG_ID"
+            domain="//@configuration/@domainDefinition/@domain.1/@domain.0" notNull="TRUE"/><columns
             UUID="Column_YS1a4-eSEeKuFeb9mp7pmQ" logicalName="변경시각" physicalName="CHNG_DT"
-            domain="//@configuration/@domainDefinition/@domain.3/@domain.0" notNull="TRUE"><physicalProperties
-              xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/></physicalProperties></columns><columnGroups
+            domain="//@configuration/@domainDefinition/@domain.3/@domain.0" notNull="TRUE"/><columnGroups
             xsi:type="e:PrimaryKeyColumnGroup" UUID="PKCGroup_YS1a5OeSEeKuFeb9mp7pmQ"
             logicalName="사용자변경이력 기본키" physicalName="PK_UseChangeHistory" derivedPhysicalName="true"
             derivedLogicalName="true"><physicalProperties xsi:type="sqlserver:IndexProperties"><relationalIndexOption/></physicalProperties><primaryKeyConstraint
@@ -344,12 +340,11 @@
                 group="PKCGroup_MYEfxueXEeKuFeb9mp7pmQ" entryIndex="1"/></memberships></columns><columns
             UUID="Column_MYEfwueXEeKuFeb9mp7pmQ" logicalName="순번" physicalName="SEQ"
             domain="//@configuration/@domainDefinition/@domain.0/@domain.0"><physicalProperties
-              xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/><identity
-                startWith="1" incrementBy="1"/></physicalProperties><memberships key="PKCGroup_MYEfxueXEeKuFeb9mp7pmQ"><value
-                xsi:type="e:PrimaryKeyMembership" group="PKCGroup_MYEfxueXEeKuFeb9mp7pmQ"
-                entryIndex="2"/></memberships></columns><columns UUID="Column_h05zwOeiEeKuFeb9mp7pmQ"
-            logicalName="변경아이디" physicalName="CHNG_ID" domain="//@configuration/@domainDefinition/@domain.1/@domain.0"
-            notNull="TRUE"><physicalProperties xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/></physicalProperties></columns><columns
+              xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/></physicalProperties><memberships
+              key="PKCGroup_MYEfxueXEeKuFeb9mp7pmQ"><value xsi:type="e:PrimaryKeyMembership"
+                group="PKCGroup_MYEfxueXEeKuFeb9mp7pmQ" entryIndex="2"/></memberships></columns><columns
+            UUID="Column_h05zwOeiEeKuFeb9mp7pmQ" logicalName="변경아이디" physicalName="CHNG_ID"
+            domain="//@configuration/@domainDefinition/@domain.1/@domain.0" notNull="TRUE"/><columns
             UUID="Column_MYEfw-eXEeKuFeb9mp7pmQ" logicalName="변경시각" physicalName="CHNG_DT"
             domain="//@configuration/@domainDefinition/@domain.3/@domain.0" notNull="TRUE"><physicalProperties
               xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/></physicalProperties></columns><columnGroups
