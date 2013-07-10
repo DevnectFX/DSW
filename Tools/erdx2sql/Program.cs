@@ -13,6 +13,7 @@ namespace erdx2sql
         public bool IsPrimaryKey { get; set; }
         public bool IsForeignKey { get; set; }
         public string primaryKeys { get; set; }
+        public bool IsAutoIncrement { get; set; }
     }
 
     /// <summary>
@@ -74,17 +75,19 @@ namespace erdx2sql
 
         private static void ParseNode(XmlNode pnode, StringBuilder output, ref SharedData sharedData)
         {
-            string comma = "";
+            string comma = " ";
             foreach (XmlNode node in pnode.ChildNodes)
             {
                 // 전처리
                 if (node.Name == "tables")
                 {
                     string tableName = node.Attributes["physicalName"].Value;
+                    string logicalName = node.Attributes["logicalName"].Value;
                     var f = @"
+-- {1}
 DROP TABLE {0};
 CREATE TABLE {0} (";
-                    output.AppendFormat(f, tableName);
+                    output.AppendFormat(f, tableName, logicalName);
                 }
                 if (node.Name == "columns")
                 {
@@ -97,28 +100,43 @@ CREATE TABLE {0} (";
                 if (node.Name == "tables")
                 {
                     if (sharedData.primaryKeys != "")
-                        output.Append(",").AppendLine().Append("   PRIMARY KEY(" + sharedData.primaryKeys + ")");
+                        output.AppendLine().Append("   , PRIMARY KEY(" + sharedData.primaryKeys + ")");
                     output.AppendLine().Append(");");
                     sharedData = new SharedData();
                 }
                 if (node.Name == "columns")
                 {
-                    string notnull = "";
                     string columnName = node.Attributes["physicalName"].Value;
+                    string logicalName = node.Attributes["logicalName"].Value;
+                    string notnull = "";
                     if (sharedData.IsPrimaryKey == true)
                     {
                         sharedData.primaryKeys += (string.IsNullOrEmpty(sharedData.primaryKeys) == true ? "" : ", ") + columnName;
                         sharedData.IsPrimaryKey = false;
                         notnull = "NOT NULL";
                     }
+                    if (sharedData.IsAutoIncrement == true)
+                    {
+                        sharedData.primaryKeys += " AUTOINCREMENT";
+                        sharedData.IsAutoIncrement = false;
+                    }
+                    
+                    notnull = (node.Attributes["notNull"] == null || node.Attributes["notNull"].Value == "FALSE") && notnull == "" ? "" : " NOT NULL";
+
                     var domainNode = GetDomainNode(pnode.OwnerDocument, node.Attributes["domain"].Value);
                     var type = domainNode.Attributes["suggestedDataType"];
-                    notnull = (node.Attributes["notNull"] == null || node.Attributes["notNull"].Value == "FALSE") && notnull == "" ? "" : " NOT NULL";
                     if (type == null)
                         type = domainNode.ParentNode.Attributes["suggestedDataType"];
-                    var f = @"{0}
-   {1} {2}{3}";
-                    output.AppendFormat(f, comma, columnName, type.Value, notnull);
+                    
+                    var defaultValue = domainNode.Attributes["suggestedDefaultValue"];
+                    string @default = "";
+                    if (defaultValue == null)
+                        defaultValue = domainNode.ParentNode.Attributes["suggestedDefaultValue"];
+                    if (defaultValue != null)
+                        @default = " DEFAULT '" + defaultValue.Value + "'";
+                    var f = @"
+   {0} {1} {2}{3}{4}     -- {5}";
+                    output.AppendFormat(f, comma, columnName, type.Value, notnull, @default, logicalName);
                     comma = ",";
                 }
                 if (node.Name == "value" && node.ParentNode.Name == "memberships")
@@ -126,6 +144,12 @@ CREATE TABLE {0} (";
                     var type = node.Attributes["xsi:type"].Value;
                     if (type == "e:PrimaryKeyMembership")
                         sharedData.IsPrimaryKey = true;
+                }
+                if (node.Name == "identity")
+                {
+                    //var startWith = node.Attributes["startWith"].Value;
+                    //var incrementBy = node.Attributes["incrementBy"].Value;
+                    sharedData.IsAutoIncrement = true;
                 }
             }
         }

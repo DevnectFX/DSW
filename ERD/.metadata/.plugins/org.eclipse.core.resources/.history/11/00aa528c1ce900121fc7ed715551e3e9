@@ -69,7 +69,9 @@
         baloonPoint="Point(31, -19)" manualSize="Dimension(107, 18)"/><diagramEntry
         xsi:type="e:TableDiagram" location="Point(38, 807)" table="Table_pwvhkOelEeKuFeb9mp7pmQ"
         theme="cobaltBlue"/><diagramEntry xsi:type="e:TableDiagram" location="Point(375, 807)"
-        table="Table_miSMEOemEeKuFeb9mp7pmQ" theme="forest"/><viewSettings showAltTableName="false"><cellsToShow>name</cellsToShow><cellsToShow>domain</cellsToShow><cellsToShow>dataType</cellsToShow><cellsToShow>nullable</cellsToShow></viewSettings><printSettings
+        table="Table_miSMEOemEeKuFeb9mp7pmQ" theme="forest"/><diagramEntry xsi:type="e:TableDiagram"
+        location="Point(38, 975)" table="Table_1QDC4OkYEeK5Aty9jNZEcQ"/><viewSettings
+        showAltTableName="false"><cellsToShow>name</cellsToShow><cellsToShow>domain</cellsToShow><cellsToShow>dataType</cellsToShow><cellsToShow>nullable</cellsToShow></viewSettings><printSettings
         marginTop="10" marginRight="10" marginBottom="10" marginLeft="10" paperKind="A3"
         paperOrientation="landscape" header="${파일이름} - ${다이어그램이름} - ${페이지번호} / ${전체페이지}"
         footter="${년}-${월}-${일} ${시}:${분}에 인쇄 됨"/></diagrams><configuration termFilePath="/DSW/dsw.xdic"><domainDefinition><domain
@@ -539,4 +541,17 @@
             logicalName="메시지 기본키" physicalName="PK_Message" derivedPhysicalName="true"
             derivedLogicalName="true"><primaryKeyConstraint UUID="PKConstraint_miSME-emEeKuFeb9mp7pmQ"
               logicalName="메시지 기본키" physicalName="PK_Message" derivedPhysicalName="true"
+              derivedLogicalName="true"/></columnGroups></tables><tables UUID="Table_1QDC4OkYEeK5Aty9jNZEcQ"
+          logicalName="테스트" physicalName="Test"><columns UUID="Column_1QDC4ekYEeK5Aty9jNZEcQ"
+            logicalName="순번" physicalName="SEQ" domain="//@configuration/@domainDefinition/@domain.0/@domain.0"><physicalProperties
+              xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/><identity
+                startWith="1" incrementBy="1"/></physicalProperties><memberships key="PKCGroup_1QDC4-kYEeK5Aty9jNZEcQ"><value
+                xsi:type="e:PrimaryKeyMembership" group="PKCGroup_1QDC4-kYEeK5Aty9jNZEcQ"
+                entryIndex="0"/></memberships></columns><columns UUID="Column_1QDC4ukYEeK5Aty9jNZEcQ"
+            logicalName="설명" physicalName="DESC_TXT" domain="//@configuration/@domainDefinition/@domain.1/@domain.4"><physicalProperties
+              xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/></physicalProperties></columns><columnGroups
+            xsi:type="e:PrimaryKeyColumnGroup" UUID="PKCGroup_1QDC4-kYEeK5Aty9jNZEcQ"
+            logicalName="테스트 기본키" physicalName="PK_Test" derivedPhysicalName="true"
+            derivedLogicalName="true"><primaryKeyConstraint UUID="PKConstraint_1QDC5OkYEeK5Aty9jNZEcQ"
+              logicalName="테스트 기본키" physicalName="PK_Test" derivedPhysicalName="true"
               derivedLogicalName="true"/></columnGroups></tables></schema></databaseModel><sharedIcons/></e:Document>
