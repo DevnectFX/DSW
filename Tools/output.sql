@@ -7,6 +7,7 @@ CREATE TABLE UserInfo (
    , DEL_YN char(1) NOT NULL DEFAULT 'N'     -- 삭제유무
    , GROUP_ID varchar(16)     -- 그룹아이디
    , PRIMARY KEY(USER_ID)
+   , FOREIGN KEY(GROUP_ID) REFERENCES GroupInfo(GROUP_ID)
 );
 -- 사용자인증
 DROP TABLE UserCert;
@@ -14,12 +15,14 @@ CREATE TABLE UserCert (
      USER_ID varchar(16) NOT NULL     -- 사용자아이디
    , PASSWD varchar(64) NOT NULL     -- 암호
    , PRIMARY KEY(USER_ID)
+   , FOREIGN KEY(USER_ID) REFERENCES UserInfo(USER_ID)
 );
 -- 사용자추가정보
 DROP TABLE UserExtraInfo;
 CREATE TABLE UserExtraInfo (
      USER_ID varchar(16) NOT NULL     -- 사용자아이디
    , PRIMARY KEY(USER_ID)
+   , FOREIGN KEY(USER_ID) REFERENCES UserInfo(USER_ID)
 );
 -- 사용자상세정보
 DROP TABLE UserDetailInfo;
@@ -27,6 +30,7 @@ CREATE TABLE UserDetailInfo (
      USER_ID varchar(16) NOT NULL     -- 사용자아이디
    , BIRTH_DT datetime     -- 출생일
    , PRIMARY KEY(USER_ID)
+   , FOREIGN KEY(USER_ID) REFERENCES UserInfo(USER_ID)
 );
 -- 사용자로그인이력
 DROP TABLE UserLoginHistory;
@@ -35,6 +39,7 @@ CREATE TABLE UserLoginHistory (
    , SEQ integer NOT NULL DEFAULT '1'     -- 순번
    , LOGIN_DT datetime NOT NULL     -- 로그인시각
    , PRIMARY KEY(USER_ID, SEQ)
+   , FOREIGN KEY(USER_ID) REFERENCES UserInfo(USER_ID)
 );
 -- 사용자변경이력
 DROP TABLE UserChangeHistory;
@@ -44,6 +49,7 @@ CREATE TABLE UserChangeHistory (
    , CHNG_ID varchar(16) NOT NULL     -- 변경아이디
    , CHNG_DT datetime NOT NULL     -- 변경시각
    , PRIMARY KEY(USER_ID, SEQ)
+   , FOREIGN KEY(USER_ID) REFERENCES UserInfo(USER_ID)
 );
 -- 사용자권한
 DROP TABLE UserAuth;
@@ -51,6 +57,8 @@ CREATE TABLE UserAuth (
      USER_ID varchar(16) NOT NULL     -- 사용자아이디
    , AUTH_TYPE varchar(8) NOT NULL     -- 권한유형
    , PRIMARY KEY(USER_ID)
+   , FOREIGN KEY(USER_ID) REFERENCES UserInfo(USER_ID)
+   , FOREIGN KEY(AUTH_TYPE) REFERENCES AuthTypeInfo(AUTH_TYPE)
 );
 -- 그룹정보
 DROP TABLE GroupInfo;
@@ -68,18 +76,22 @@ CREATE TABLE GroupAuth (
      GROUP_ID varchar(16) NOT NULL     -- 그룹아이디
    , AUTH_TYPE varchar(8) NOT NULL     -- 권한유형
    , PRIMARY KEY(GROUP_ID)
+   , FOREIGN KEY(GROUP_ID) REFERENCES GroupInfo(GROUP_ID)
+   , FOREIGN KEY(AUTH_TYPE) REFERENCES AuthTypeInfo(AUTH_TYPE)
 );
 -- 그룹추가정보
 DROP TABLE GroupExtraInfo;
 CREATE TABLE GroupExtraInfo (
      GROUP_ID varchar(16) NOT NULL     -- 그룹아이디
    , PRIMARY KEY(GROUP_ID)
+   , FOREIGN KEY(GROUP_ID) REFERENCES GroupInfo(GROUP_ID)
 );
 -- 그룹상세정보
 DROP TABLE GroupDetailInfo;
 CREATE TABLE GroupDetailInfo (
      GROUP_ID varchar(16) NOT NULL     -- 그룹아이디
    , PRIMARY KEY(GROUP_ID)
+   , FOREIGN KEY(GROUP_ID) REFERENCES GroupInfo(GROUP_ID)
 );
 -- 그룹변경이력
 DROP TABLE GroupChangeHistory;
@@ -89,6 +101,7 @@ CREATE TABLE GroupChangeHistory (
    , CHNG_ID varchar(16) NOT NULL     -- 변경아이디
    , CHNG_DT datetime NOT NULL     -- 변경시각
    , PRIMARY KEY(GROUP_ID, SEQ)
+   , FOREIGN KEY(GROUP_ID) REFERENCES GroupInfo(GROUP_ID)
 );
 -- 권한유형정보
 DROP TABLE AuthTypeInfo;
@@ -119,6 +132,7 @@ DROP TABLE MenuExtraInfo;
 CREATE TABLE MenuExtraInfo (
      MENU_ID varchar(16) NOT NULL     -- 메뉴아이디
    , PRIMARY KEY(MENU_ID)
+   , FOREIGN KEY(MENU_ID) REFERENCES MenuInfo(MENU_ID)
 );
 -- 사용자메뉴
 DROP TABLE UserMenu;
@@ -129,6 +143,8 @@ CREATE TABLE UserMenu (
    , REG_ID varchar(16) NOT NULL     -- 등록아이디
    , REG_DT datetime NOT NULL     -- 등록시각
    , PRIMARY KEY(USER_ID)
+   , FOREIGN KEY(USER_ID) REFERENCES UserInfo(USER_ID)
+   , FOREIGN KEY(MENU_ID) REFERENCES MenuInfo(MENU_ID)
 );
 -- 그룹메뉴
 DROP TABLE GroupMenu;
@@ -139,6 +155,8 @@ CREATE TABLE GroupMenu (
    , REG_ID varchar(16) NOT NULL     -- 등록아이디
    , REG_DT datetime NOT NULL     -- 등록시각
    , PRIMARY KEY(GROUP_ID)
+   , FOREIGN KEY(GROUP_ID) REFERENCES GroupInfo(GROUP_ID)
+   , FOREIGN KEY(MENU_ID) REFERENCES MenuInfo(MENU_ID)
 );
 -- 공통코드
 DROP TABLE CommonCode;

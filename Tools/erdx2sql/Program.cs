@@ -11,9 +11,12 @@ namespace erdx2sql
     struct SharedData
     {
         public bool IsPrimaryKey { get; set; }
-        public bool IsForeignKey { get; set; }
-        public string primaryKeys { get; set; }
+        public string PrimaryKeys { get; set; }
         public bool IsAutoIncrement { get; set; }
+        public bool IsForeignKey { get; set; }
+        public string ForeignKeyTable { get; set; }
+        public string ForeignKeyColumn { get; set; }
+        public string ForeignKeys { get; set; }
     }
 
     /// <summary>
@@ -99,8 +102,11 @@ CREATE TABLE {0} (";
                 // 후처리
                 if (node.Name == "tables")
                 {
-                    if (sharedData.primaryKeys != "")
-                        output.AppendLine().Append("   , PRIMARY KEY(" + sharedData.primaryKeys + ")");
+                    if (string.IsNullOrEmpty(sharedData.PrimaryKeys) == false)
+                        output.AppendLine().Append("   , PRIMARY KEY(" + sharedData.PrimaryKeys + ")");
+                    if (string.IsNullOrEmpty(sharedData.ForeignKeys) == false)
+                        output.Append(sharedData.ForeignKeys);
+
                     output.AppendLine().Append(");");
                     sharedData = new SharedData();
                 }
@@ -111,13 +117,18 @@ CREATE TABLE {0} (";
                     string notnull = "";
                     if (sharedData.IsPrimaryKey == true)
                     {
-                        sharedData.primaryKeys += (string.IsNullOrEmpty(sharedData.primaryKeys) == true ? "" : ", ") + columnName;
+                        sharedData.PrimaryKeys += (string.IsNullOrEmpty(sharedData.PrimaryKeys) == true ? "" : ", ") + columnName;
                         sharedData.IsPrimaryKey = false;
                         notnull = "NOT NULL";
                     }
+                    if (sharedData.IsForeignKey == true)
+                    {
+                        sharedData.ForeignKeys += Environment.NewLine + "   , FOREIGN KEY(" + columnName + ") REFERENCES " + sharedData.ForeignKeyTable + "(" + sharedData.ForeignKeyColumn + ")"; 
+                        sharedData.IsForeignKey = false;
+                    }
                     if (sharedData.IsAutoIncrement == true)
                     {
-                        sharedData.primaryKeys += " AUTOINCREMENT";
+                        sharedData.PrimaryKeys += " AUTOINCREMENT";
                         sharedData.IsAutoIncrement = false;
                     }
                     
@@ -144,6 +155,16 @@ CREATE TABLE {0} (";
                     var type = node.Attributes["xsi:type"].Value;
                     if (type == "e:PrimaryKeyMembership")
                         sharedData.IsPrimaryKey = true;
+                    if (type == "e:ColumnReference")
+                    {
+                        sharedData.IsForeignKey = true;
+                        var parentColumn = node.Attributes["parentColumn"].Value;
+                        var parentNode = node.OwnerDocument.SelectSingleNode("//columns[@UUID=\"" + parentColumn + "\"]");
+                        var tableName = parentNode.ParentNode.Attributes["physicalName"].Value;
+                        var columnName = parentNode.Attributes["physicalName"].Value;
+                        sharedData.ForeignKeyTable = tableName;
+                        sharedData.ForeignKeyColumn = columnName;
+                    }
                 }
                 if (node.Name == "identity")
                 {
