@@ -28,16 +28,12 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="W:/DevnectFX/DSW/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/common.exerd"/>
-</editor>
-<editor id="com.tomato.exerd.editor.DiagramEditor" name="common.erdx" partName="common.erdx" path="W:/DevnectFX/DSW/ERD/DSW/common.erdx" title="common.erdx" tooltip="DSW/common.erdx" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/common.erdx"/>
 </editor>
 <editor id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" partName="dsw.xdic" path="W:/DevnectFX/ERD/DSW/dsw.xdic" title="dsw.xdic" tooltip="DSW/dsw.xdic" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/dsw.xdic"/>
@@ -56,7 +52,7 @@
 <element path="/DSW"/>
 </expanded>
 <selection>
-<element path="/DSW/common.exerd"/>
+<element path="/DSW/common.erdx"/>
 </selection>
 </viewState>
 </view>
@@ -195,9 +191,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/DSW/common.erdx"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
 </editors>
-<item historyLabel="common.exerd" index="1"/>
-<item historyLabel="dsw.xdic" index="0"/>
 <item historyLabel="common.exerd" index="1"/>
 <item historyLabel="dsw.xdic" index="0"/>
 <item historyLabel="common.exerd" index="1"/>
@@ -253,6 +248,8 @@
 <item historyLabel="common.erdx" index="10"/>
 <item historyLabel="common.exerd" index="1"/>
 <item historyLabel="common.erdx" index="10"/>
+<item historyLabel="common.exerd" index="1"/>
+<item historyLabel="common.erdx" index="11"/>
 <item active="true" historyLabel="common.exerd" index="1"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

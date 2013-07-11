@@ -7,6 +7,7 @@ namespace SimpleDataTest
     {
         public string UserId { get; set; }
         public string Name { get; set; }
+        public string DelYn { get; set; }
         public IList<UserDetailInfo> UserDetailInfo { get; set; }
     }
 
@@ -30,7 +31,7 @@ namespace SimpleDataTest
             IEnumerable<UserInfo> result = db.UserInfo.All();
             foreach (var row in result)
             {
-                Console.WriteLine(row.UserId + ": " + row.Name);
+                Console.WriteLine(row.UserId + ": " + row.Name + ", " + row.DelYn);
             }
 
             var result2 = db.UserDetailInfo.All();
@@ -73,7 +74,7 @@ namespace SimpleDataTest
             //db.UserExtraInfo.Insert(UserId: "spowner");
 
             UserInfo info = db.UserInfo.Get("spowner");
-            info.Name = "Á¤¼¼ÆÈ";
+            info.DelYn = "N";
             db.UserInfo.Update(info);
 		}
 	}

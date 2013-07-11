@@ -86,6 +86,7 @@
     <Compile Include="Sources\Modules\AdminModule.cs" />
     <Compile Include="Sources\Core\DSWModule.cs" />
     <Compile Include="Sources\Core\Extention\StringExtention.cs" />
+    <Compile Include="Sources\Models\UserInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -648,5 +649,6 @@
   <ItemGroup>
     <Folder Include="Sources\Core\Extention\" />
     <Folder Include="WebContents\common\bootstrap\" />
+    <Folder Include="Sources\Models\" />
   </ItemGroup>
 </Project>
