@@ -30,20 +30,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Nancy">
-      <HintPath>packages\Nancy.0.17.1\lib\net40\Nancy.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy.Hosting.Self">
-      <HintPath>packages\Nancy.Hosting.Self.0.17.1\lib\net40\Nancy.Hosting.Self.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Razor.Unofficial">
       <HintPath>packages\System.Web.Razor.Unofficial.2.0.2\lib\net40\System.Web.Razor.Unofficial.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy.ViewEngines.Razor">
-      <HintPath>packages\Nancy.Viewengines.Razor.0.17.1\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy.Authentication.Forms">
-      <HintPath>packages\Nancy.Authentication.Forms.0.17.1\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Simple.Data">
       <HintPath>packages\Simple.Data.Core.0.18.3.1\lib\net40\Simple.Data.dll</HintPath>
@@ -51,29 +39,41 @@
     <Reference Include="Simple.Data.Ado">
       <HintPath>packages\Simple.Data.Ado.0.18.3.1\lib\net40\Simple.Data.Ado.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.SQLite">
-      <HintPath>packages\System.Data.SQLite.1.0.86.0\lib\net40\System.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.Linq">
-      <HintPath>packages\System.Data.SQLite.1.0.86.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
-    </Reference>
     <Reference Include="Simple.Data.Sqlite">
       <HintPath>packages\Simple.Data.Sqlite.0.18.3.1\lib\net40\Simple.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>packages\System.Data.SQLite.1.0.87.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>packages\System.Data.SQLite.1.0.87.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="EPPlus">
-      <HintPath>packages\PdfReport.2.0\lib\EPPlus.dll</HintPath>
+      <HintPath>packages\PdfReport.2.1\lib\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>packages\PdfReport.2.0\lib\itextsharp.dll</HintPath>
+      <HintPath>packages\PdfReport.2.1\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp.pdfa">
-      <HintPath>packages\PdfReport.2.0\lib\itextsharp.pdfa.dll</HintPath>
+      <HintPath>packages\PdfReport.2.1\lib\itextsharp.pdfa.dll</HintPath>
     </Reference>
     <Reference Include="PdfRpt">
-      <HintPath>packages\PdfReport.2.0\lib\PdfRpt.dll</HintPath>
+      <HintPath>packages\PdfReport.2.1\lib\PdfRpt.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy">
+      <HintPath>packages\Nancy.0.18.0\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.Razor">
+      <HintPath>packages\Nancy.Viewengines.Razor.0.18.0\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Hosting.Self">
+      <HintPath>packages\Nancy.Hosting.Self.0.18.0\lib\net40\Nancy.Hosting.Self.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Authentication.Forms">
+      <HintPath>packages\Nancy.Authentication.Forms.0.18.0\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -89,8 +89,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="x64\SQLite.Interop.dll" />
-    <None Include="x86\SQLite.Interop.dll" />
     <None Include="Views\Test\Test.cshtml" />
     <None Include="packages.config" />
     <None Include="app.config">
@@ -634,7 +632,8 @@
     <None Include="WebContents\common\bootstrap\img\glyphicons-halflings.png" />
     <None Include="WebContents\common\bootstrap\js\bootstrap.js" />
     <None Include="WebContents\common\bootstrap\js\bootstrap.min.js" />
-    <None Include="Tools\sqlite3.exe" />
+    <None Include="x64\SQLite.Interop.dll" />
+    <None Include="x86\SQLite.Interop.dll" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="exports.xml" />
@@ -649,6 +648,5 @@
   <ItemGroup>
     <Folder Include="Sources\Core\Extention\" />
     <Folder Include="WebContents\common\bootstrap\" />
-    <Folder Include="Tools\" />
   </ItemGroup>
 </Project>
