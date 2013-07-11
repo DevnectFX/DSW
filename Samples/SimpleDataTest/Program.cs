@@ -7,13 +7,18 @@ namespace SimpleDataTest
     {
         public string UserId { get; set; }
         public string Name { get; set; }
-        public IEnumerable<UserDetailInfo> UserDetailInfo { get; set; }
+        public IList<UserDetailInfo> UserDetailInfo { get; set; }
     }
 
     public class UserDetailInfo
     {
         public string UserId { get; set; }
         public DateTime BirthDt { get; set; }
+    }
+
+    public class UserExtraInfo
+    {
+        public string UserId { get; set; }
     }
 
 	class MainClass
@@ -41,11 +46,14 @@ namespace SimpleDataTest
                 Console.WriteLine(row.UserId + ": " + row.BirthDt);
             }
 
-            IEnumerable<UserInfo> userInfo = db.UserInfo.WithUserDetailInfo();
+            IEnumerable<UserInfo> userInfo = db.UserInfo.WithUserDetailInfo().WithUserExtraInfo();
             foreach (var row in userInfo)
             {
                 Console.WriteLine(row.UserId + ": " + row.Name);
-                Console.WriteLine("!" + row.UserDetailInfo + "!");
+				foreach (var row2 in row.UserDetailInfo)
+				{
+					Console.WriteLine("!" + row2.BirthDt + "!");
+				}
             }
 
             var result4 = db.UserInfo.WithUserDetailInfo();
@@ -62,6 +70,11 @@ namespace SimpleDataTest
 
             //db.UserInfo.Insert(UserId: "superdev", Name:"±è»ó¸°");
             //db.UserDetailInfo.Insert(UserId: "superdev", BirthDt: "1972-01-01");
+            //db.UserExtraInfo.Insert(UserId: "spowner");
+
+            UserInfo info = db.UserInfo.Get("spowner");
+            info.Name = "Á¤¼¼ÆÈ";
+            db.UserInfo.Update(info);
 		}
 	}
 }
