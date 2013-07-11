@@ -40,7 +40,7 @@
     </Reference>
     <Reference Include="Simple.Data.Sqlite, Version=0.18.3.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Samples\Simple.Data.Sqlite\src\Simple.Data.Sqlite\bin\Release\Simple.Data.Sqlite.dll</HintPath>
+      <HintPath>..\..\Libs\Simple.Data.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data.SQLite, Version=1.0.87.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
