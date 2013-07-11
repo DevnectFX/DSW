@@ -3,12 +3,18 @@ using System.Collections.Generic;
 
 namespace SimpleDataTest
 {
-    class UserInfo
+    public class UserInfo
     {
         public string UserId { get; set; }
         public string Name { get; set; }
+        public IEnumerable<UserDetailInfo> UserDetailInfo { get; set; }
     }
 
+    public class UserDetailInfo
+    {
+        public string UserId { get; set; }
+        public DateTime BirthDt { get; set; }
+    }
 
 	class MainClass
 	{
@@ -29,15 +35,33 @@ namespace SimpleDataTest
             }
 
 
-            var result3 = db.UserInfo.Select(db.UserInfo.UserDetailInfo.BirthDt);
+            var result3 = db.UserInfo.Select(db.UserInfo.UserId, db.UserInfo.UserDetailInfo.BirthDt);
             foreach (var row in result3)
             {
                 Console.WriteLine(row.UserId + ": " + row.BirthDt);
             }
 
+            IEnumerable<UserInfo> userInfo = db.UserInfo.WithUserDetailInfo();
+            foreach (var row in userInfo)
+            {
+                Console.WriteLine(row.UserId + ": " + row.Name);
+                Console.WriteLine("!" + row.UserDetailInfo + "!");
+            }
 
-            //db.UserInfo.Insert(UserId: "spowner", Name:"정세일");
-            //db.UserDetailInfo.Insert(UserId: "spowner", BirthDt: "1978-08-23");
+            var result4 = db.UserInfo.WithUserDetailInfo();
+            foreach (var row in result4)
+            {
+                Console.WriteLine(row.UserId + ": " + row.Name);
+                IEnumerable<UserDetailInfo> UserDetailInfo = row.UserDetailInfo;
+                foreach (var row2 in row.UserDetailInfo)
+                {
+                    Console.WriteLine("!" + row2.BirthDt + "!");
+                }
+            }
+
+
+            //db.UserInfo.Insert(UserId: "superdev", Name:"김상린");
+            //db.UserDetailInfo.Insert(UserId: "superdev", BirthDt: "1972-01-01");
 		}
 	}
 }
