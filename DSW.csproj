@@ -637,6 +637,7 @@
     <None Include="x86\SQLite.Interop.dll" />
     <None Include="Views\admin\AdminLayout.cshtml" />
     <None Include="Views\admin\Default.cshtml" />
+    <None Include="WebContents\common\bootstrap\js\html5shiv.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="exports.xml" />
