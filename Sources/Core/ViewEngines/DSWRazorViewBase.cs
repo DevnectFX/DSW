@@ -25,11 +25,15 @@ namespace DSW.ViewEngines.Razor
 		private static string GetLayout(IRenderContext renderContext)
 		{
             var viewName = renderContext.Context.NegotiationContext.ViewName;
-            var header = viewName.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+			var isPopup = viewName.EndsWith("Popup");
+			var header = viewName.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
             string result = "/";
             if (header.Length >= 2)
                 result = "/" + header[0] + "/" + header[0].ToFirstUpper();
-            result += "Layout.cshtml";
+			if (isPopup == true)
+				result += "LayoutPopup.cshtml";
+			else
+				result += "Layout.cshtml";
 
 			return result;
 		}

@@ -635,9 +635,13 @@
     <None Include="WebContents\common\bootstrap\js\bootstrap.min.js" />
     <None Include="x64\SQLite.Interop.dll" />
     <None Include="x86\SQLite.Interop.dll" />
-    <None Include="Views\admin\AdminLayout.cshtml" />
+    <None Include="Views\admin\AdminLayout.cshtml">
+      <DependentUpon>Default.cshtml</DependentUpon>
+    </None>
     <None Include="Views\admin\Default.cshtml" />
     <None Include="WebContents\common\bootstrap\js\html5shiv.js" />
+    <None Include="Views\admin\AdminLayoutPopup.cshtml" />
+    <None Include="Views\admin\DefaultPopup.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="exports.xml" />

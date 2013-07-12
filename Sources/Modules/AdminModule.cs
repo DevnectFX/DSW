@@ -13,6 +13,7 @@ namespace DSW.Modules
 			Get["/"] = _ => {
 				return View["admin/Default"];
 			};
+			Get["/popup"] = _ => View["admin/DefaultPopup"];
 		}
 	}
 }
