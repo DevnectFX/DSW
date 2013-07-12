@@ -35,9 +35,4 @@
   <term name="경로" description="경로" physicalName="PATH" physicalDescription="Path"/>
   <term name="정보" description="정보" physicalName="INFO" physicalDescription="Information"/>
   <term name="추가" description="추가" physicalName="EXTRA" physicalDescription="Extra"/>
-  <term name="파일" description="파일" physicalName="FILE" physicalDescription="File"/>
-  <term name="UUID" description="UUID" physicalName="UUID" physicalDescription="UUID"/>
-  <term name="전체" description="전체" physicalName="FULL" physicalDescription="Full"/>
-  <term name="크기" description="크기" physicalName="SIZE" physicalDescription="Size"/>
-  <term name="첨부" description="첨부" physicalName="ATTACH" physicalDescription="Attach"/>
 </tm:TermDictionary>

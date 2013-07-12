@@ -635,6 +635,8 @@
     <None Include="WebContents\common\bootstrap\js\bootstrap.min.js" />
     <None Include="x64\SQLite.Interop.dll" />
     <None Include="x86\SQLite.Interop.dll" />
+    <None Include="Views\admin\AdminLayout.cshtml" />
+    <None Include="Views\admin\Default.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="exports.xml" />
@@ -650,5 +652,6 @@
     <Folder Include="Sources\Core\Extention\" />
     <Folder Include="WebContents\common\bootstrap\" />
     <Folder Include="Sources\Models\" />
+    <Folder Include="Views\admin\" />
   </ItemGroup>
 </Project>

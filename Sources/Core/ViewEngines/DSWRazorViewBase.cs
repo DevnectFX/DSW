@@ -24,12 +24,12 @@ namespace DSW.ViewEngines.Razor
 
 		private static string GetLayout(IRenderContext renderContext)
 		{
-			var path = renderContext.Context.Request.Path;
-			var header = path.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-			string result = "/";
-			if (header.Length > 0)
-				result = "/" + header[1] + "/" + header[1].ToFirstUpper();
-			result += "Layout.cshtml";
+            var viewName = renderContext.Context.NegotiationContext.ViewName;
+            var header = viewName.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            string result = "/";
+            if (header.Length >= 2)
+                result = "/" + header[0] + "/" + header[0].ToFirstUpper();
+            result += "Layout.cshtml";
 
 			return result;
 		}
