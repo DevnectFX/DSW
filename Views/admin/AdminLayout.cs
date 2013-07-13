@@ -83,7 +83,27 @@ WriteLiteral(" />\r\n\r\n    <!-- HTML5 shim, for IE6-8 support of HTML5 element
 
 WriteLiteral(" src=\"/common/bootstrap/js/html5shiv.js\"");
 
-WriteLiteral("></script>\r\n    <![endif]-->\r\n\r\n    <!-- Fav and touch icons -->\r\n    <link");
+WriteLiteral("></script>\r\n    <![endif]-->\r\n    <link");
+
+WriteLiteral(" href=\"/common/kendoui.web/styles/kendo.common.min.css\"");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" />\r\n    <link");
+
+WriteLiteral(" href=\"/common/kendoui.web/styles/kendo.default.min.css\"");
+
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteLiteral(" />\r\n    <script");
+
+WriteLiteral(" src=\"/common/kendoui.web/js/jquery.min.js\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"/common/kendoui.web/js/kendo.all.min.js\"");
+
+WriteLiteral("></script>\r\n\r\n\r\n    <!-- Fav and touch icons -->\r\n    <link");
 
 WriteLiteral(" rel=\"apple-touch-icon-precomposed\"");
 
@@ -129,7 +149,7 @@ WriteLiteral(" class=\"navbar-inner\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"container-fluid\"");
+WriteLiteral(" class=\"container\"");
 
 WriteLiteral(">\r\n          <button");
 
@@ -196,94 +216,144 @@ WriteLiteral(" href=\"#contact\"");
 WriteLiteral(">Contact</a></li>\r\n            </ul>\r\n          </div><!--/.nav-collapse -->\r\n   " +
 "     </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div");
 
-WriteLiteral(" class=\"container-fluid\"");
+WriteLiteral(" class=\"container\"");
 
 WriteLiteral(">\r\n      <div");
 
-WriteLiteral(" class=\"row-fluid\"");
+WriteLiteral(" class=\"row\"");
 
 WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"span2\"");
+WriteLiteral(" class=\"span3\"");
 
-WriteLiteral(">\r\n          <div");
+WriteLiteral(">\r\n        <div");
 
-WriteLiteral(" class=\"well sidebar-nav\"");
+WriteLiteral(" id=\"organizer\"");
 
 WriteLiteral(">\r\n            <ul");
 
-WriteLiteral(" class=\"nav nav-list\"");
+WriteLiteral(" id=\"panelbar\"");
 
-WriteLiteral(">\r\n              <li");
+WriteLiteral(">\r\n            <li");
 
-WriteLiteral(" class=\"nav-header\"");
+WriteLiteral(" class=\"k-state-active\"");
 
-WriteLiteral(">Sidebar</li>\r\n              <li");
+WriteLiteral(">\r\n                <span");
 
-WriteLiteral(" class=\"active\"");
+WriteLiteral(" class=\"k-link k-state-selected\"");
 
-WriteLiteral("><a");
+WriteLiteral(">My Teammates</span>\r\n                <div");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" style=\"padding: 10px;\"");
 
-WriteLiteral(">Link</a></li>\r\n              <li><a");
+WriteLiteral(">\r\n                    <div");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" class=\"teamMate\"");
 
-WriteLiteral(">Link</a></li>\r\n              <li><a");
+WriteLiteral(">\r\n                        <img");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" src=\"../../content/web/panelbar/andrew.jpg\"");
 
-WriteLiteral(">Link</a></li>\r\n              <li><a");
+WriteLiteral(" alt=\"Andrew Fuller\"");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(">\r\n                        <h2>Andrew Fuller</h2>\r\n                        <p>Tea" +
+"m Lead</p>\r\n                    </div>\r\n                    <div");
 
-WriteLiteral(">Link</a></li>\r\n              <li");
+WriteLiteral(" class=\"teamMate\"");
 
-WriteLiteral(" class=\"nav-header\"");
+WriteLiteral(">\r\n                        <img");
 
-WriteLiteral(">Sidebar</li>\r\n              <li><a");
+WriteLiteral(" src=\"../../content/web/panelbar/nancy.jpg\"");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" alt=\"Nancy Leverling\"");
 
-WriteLiteral(">Link</a></li>\r\n              <li><a");
+WriteLiteral(">\r\n                        <h2>Nancy Leverling</h2>\r\n                        <p>S" +
+"ales Associate</p>\r\n                    </div>\r\n                    <div");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" class=\"teamMate\"");
 
-WriteLiteral(">Link</a></li>\r\n              <li><a");
+WriteLiteral(">\r\n                        <img");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" src=\"../../content/web/panelbar/robert.jpg\"");
 
-WriteLiteral(">Link</a></li>\r\n              <li><a");
+WriteLiteral(" alt=\"Robert King\"");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(@">
+                        <h2>Robert King</h2>
+                        <p>Business System Analyst</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                Projects
+                <ul>
+                    <li>New Business Plan</li>
+                    <li>
+                        Sales Forecasts
+                        <ul>
+                            <li>Q1 Forecast</li>
+                            <li>Q2 Forecast</li>
+                            <li>Q3 Forecast</li>
+                            <li>Q4 Forecast</li>
+                        </ul>
+                    </li>
+                    <li>Sales Reports</li>
+                </ul>
 
-WriteLiteral(">Link</a></li>\r\n              <li><a");
+            </li>
+            <li>
+                Programs
+                <ul>
+                    <li>Monday</li>
+                    <li>Tuesday</li>
+                    <li>Wednesday</li>
+                    <li>Thursday</li>
+                    <li>Friday</li>
+                </ul>
+            </li>
+            <li");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" disabled=\"disabled\"");
 
-WriteLiteral(">Link</a></li>\r\n              <li><a");
+WriteLiteral(">\r\n                Communication\r\n            </li>\r\n        </ul>\r\n            <" +
+"div");
 
-WriteLiteral(" href=\"#\"");
+WriteLiteral(" id=\"bottom\"");
 
-WriteLiteral(">Link</a></li>\r\n              <li");
-
-WriteLiteral(" class=\"nav-header\"");
-
-WriteLiteral(">Sidebar</li>\r\n              <li><a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Link</a></li>\r\n              <li><a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Link</a></li>\r\n              <li><a");
-
-WriteLiteral(" href=\"#\"");
-
-WriteLiteral(">Link</a></li>\r\n            </ul>\r\n          </div><!--/.well -->\r\n        </div>" +
-"<!--/span-->\r\n        <div");
+WriteLiteral(@"></div>
+        </div>
+        <style scoped>
+            .teamMate:after {
+                content: ""."";
+                display: block;
+                height: 0;
+                line-height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+            .teamMate h2 {
+                font-size: 1.4em;
+                font-weight: normal;
+                padding-top: 20px;
+            }
+            .teamMate p {
+                margin: 5px 0;
+            }
+            .teamMate img {
+                float: left;
+                margin: 5px 15px 5px 5px;
+                border: 1px solid #ccc;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $(""#panelbar"").kendoPanelBar({
+                    expandMode: ""single""
+                });
+            });
+        </script>
+        </div><!--/span-->
+        <div");
 
 WriteLiteral(" class=\"span9\"");
 
@@ -292,7 +362,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("          ");
 
 
-#line 96 "W:\DevnectFX\DSW\Views\admin\AdminLayout.cshtml"
+#line 166 "W:\DevnectFX\DSW\Views\admin\AdminLayout.cshtml"
      Write(RenderBody());
 
 

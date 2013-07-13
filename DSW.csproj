@@ -691,6 +691,7 @@
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>AdminLayoutPopup.cs</LastGenOutput>
     </None>
+    <None Include="WebContents\common\kendoui.web\js\kendo.all.min.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="exports.xml" />
