@@ -89,7 +89,7 @@
     <Compile Include="Sources\Models\UserInfo.cs" />
     <Compile Include="Views\admin\AdminLayout.cs">
       <DependentUpon>AdminLayout.cshtml</DependentUpon>
-    </Compile>
+	</Compile>
     <Compile Include="Views\admin\AdminLayoutPopup.cs">
       <DependentUpon>AdminPopupLayout.cshtml</DependentUpon>
     </Compile>
@@ -674,7 +674,6 @@
     <None Include="x64\SQLite.Interop.dll" />
     <None Include="x86\SQLite.Interop.dll" />
     <None Include="Views\admin\AdminLayout.cshtml">
-      <DependentUpon>Default.cshtml</DependentUpon>
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>AdminLayout.cs</LastGenOutput>
     </None>

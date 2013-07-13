@@ -11,9 +11,10 @@ namespace DSW.Modules
 			: base("/admin")
 		{
 			Get["/"] = _ => {
-				return View["admin/Default"];
+				return View["Admin/Default"];
 			};
-			Get["/popup"] = _ => View["admin/DefaultPopup"];
+
+			Get["/menu"] = _ => View["Admin/Menu"];
 		}
 	}
 }
