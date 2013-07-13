@@ -2,7 +2,6 @@ using System;
 using Nancy.ViewEngines.Razor;
 using Nancy.ViewEngines;
 using System.Linq;
-using DSW.Model;
 using DSW;
 using DSW.Extention;
 
