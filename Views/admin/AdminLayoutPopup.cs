@@ -25,7 +25,11 @@ public partial class AdminLayoutPopup : Nancy.ViewEngines.Razor.NancyRazorViewBa
 
 public override void Execute()
 {
-WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta");
+WriteLiteral("<!DOCTYPE html>\r\n<html");
+
+WriteLiteral(" lang=\"ko\"");
+
+WriteLiteral(">\r\n  <head>\r\n    <meta");
 
 WriteLiteral(" charset=\"utf-8\"");
 

@@ -30,7 +30,7 @@ namespace DSW.ViewEngines.Razor
             if (header.Length >= 2)
                 result = "/" + header[0] + "/" + header[0].ToFirstUpper();
 			if (isPopup == true)
-				result += "LayoutPopup.cshtml";
+				result += "PopupLayout.cshtml";
 			else
 				result += "Layout.cshtml";
 

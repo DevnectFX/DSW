@@ -91,7 +91,7 @@
       <DependentUpon>AdminLayout.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\admin\AdminLayoutPopup.cs">
-      <DependentUpon>AdminLayoutPopup.cshtml</DependentUpon>
+      <DependentUpon>AdminPopupLayout.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Views\admin\Default.cs">
       <DependentUpon>Default.cshtml</DependentUpon>
@@ -111,6 +111,8 @@
     <Compile Include="Views\Test2.cs">
       <DependentUpon>Test2.cshtml</DependentUpon>
     </Compile>
+    <Compile Include="Sources\Services\AdminService.cs" />
+    <Compile Include="Sources\Core\DSWService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -681,13 +683,13 @@
       <LastGenOutput>Default.cs</LastGenOutput>
     </None>
     <None Include="WebContents\common\bootstrap\js\html5shiv.js" />
-    <None Include="Views\admin\AdminLayoutPopup.cshtml">
-      <Generator>RazorTemplatePreprocessor</Generator>
-      <LastGenOutput>AdminLayoutPopup.cs</LastGenOutput>
-    </None>
     <None Include="Views\admin\DefaultPopup.cshtml">
       <Generator>RazorTemplatePreprocessor</Generator>
       <LastGenOutput>DefaultPopup.cs</LastGenOutput>
+    </None>
+    <None Include="Views\admin\AdminPopupLayout.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>AdminLayoutPopup.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup />
@@ -705,6 +707,6 @@
     <Folder Include="WebContents\common\bootstrap\" />
     <Folder Include="Sources\Models\" />
     <Folder Include="Views\admin\" />
-    <Folder Include="Sources\Core\Model\" />
+    <Folder Include="Sources\Services\" />
   </ItemGroup>
 </Project>
