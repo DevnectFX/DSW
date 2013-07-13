@@ -75,6 +75,7 @@
     <Reference Include="Nancy.Authentication.Forms">
       <HintPath>packages\Nancy.Authentication.Forms.0.18.0\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,15 +83,43 @@
     <Compile Include="Sources\SelfHostingStartup.cs" />
     <Compile Include="Sources\DSWBoostrapper.cs" />
     <Compile Include="Sources\Core\ViewEngines\DSWRazorViewBase.cs" />
-    <Compile Include="Sources\Core\Model\LayoutViewModel.cs" />
     <Compile Include="Sources\Modules\AdminModule.cs" />
     <Compile Include="Sources\Core\DSWModule.cs" />
     <Compile Include="Sources\Core\Extention\StringExtention.cs" />
     <Compile Include="Sources\Models\UserInfo.cs" />
+    <Compile Include="Views\admin\AdminLayout.cs">
+      <DependentUpon>AdminLayout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\AdminLayoutPopup.cs">
+      <DependentUpon>AdminPopupLayout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\Default.cs">
+      <DependentUpon>Default.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\admin\DefaultPopup.cs">
+      <DependentUpon>DefaultPopup.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Test\Test.cs">
+      <DependentUpon>Test.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Test\TestLayout.cs">
+      <DependentUpon>TestLayout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Layout.cs">
+      <DependentUpon>Layout.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Test2.cs">
+      <DependentUpon>Test2.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\Services\AdminService.cs" />
+    <Compile Include="Sources\Core\DSWService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="Views\Test\Test.cshtml" />
+    <None Include="Views\Test\Test.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>Test.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="app.config">
       <SubType>Designer</SubType>
@@ -622,9 +651,18 @@
     <None Include="WebContents\common\kendoui.web\typescript\kendo.web.d.ts" />
     <None Include="WebContents\common\kendoui.web\vsdoc\kendo.web-vsdoc.js" />
     <None Include="WebContents\common\kendoui.web\vsdoc\kendo.web.min.intellisense.js" />
-    <None Include="Views\Test2.cshtml" />
-    <None Include="Views\Test\TestLayout.cshtml" />
-    <None Include="Views\Layout.cshtml" />
+    <None Include="Views\Test2.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>Test2.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Test\TestLayout.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>TestLayout.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Layout.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>Layout.cs</LastGenOutput>
+    </None>
     <None Include="WebContents\common\bootstrap\css\bootstrap-responsive.css" />
     <None Include="WebContents\common\bootstrap\css\bootstrap-responsive.min.css" />
     <None Include="WebContents\common\bootstrap\css\bootstrap.css" />
@@ -635,6 +673,25 @@
     <None Include="WebContents\common\bootstrap\js\bootstrap.min.js" />
     <None Include="x64\SQLite.Interop.dll" />
     <None Include="x86\SQLite.Interop.dll" />
+    <None Include="Views\admin\AdminLayout.cshtml">
+      <DependentUpon>Default.cshtml</DependentUpon>
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>AdminLayout.cs</LastGenOutput>
+    </None>
+    <None Include="Views\admin\Default.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>Default.cs</LastGenOutput>
+    </None>
+    <None Include="WebContents\common\bootstrap\js\html5shiv.js" />
+    <None Include="Views\admin\DefaultPopup.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>DefaultPopup.cs</LastGenOutput>
+    </None>
+    <None Include="Views\admin\AdminPopupLayout.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>AdminLayoutPopup.cs</LastGenOutput>
+    </None>
+    <None Include="WebContents\common\kendoui.web\js\kendo.all.min.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="exports.xml" />
@@ -650,5 +707,7 @@
     <Folder Include="Sources\Core\Extention\" />
     <Folder Include="WebContents\common\bootstrap\" />
     <Folder Include="Sources\Models\" />
+    <Folder Include="Views\admin\" />
+    <Folder Include="Sources\Services\" />
   </ItemGroup>
 </Project>

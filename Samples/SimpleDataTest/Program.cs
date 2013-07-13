@@ -51,9 +51,12 @@ namespace SimpleDataTest
             foreach (var row in userInfo)
             {
                 Console.WriteLine(row.UserId + ": " + row.Name);
-				foreach (var row2 in row.UserDetailInfo)
+				if (row.UserDetailInfo != null)
 				{
-					Console.WriteLine("!" + row2.BirthDt + "!");
+					foreach (var row2 in row.UserDetailInfo)
+					{
+						Console.WriteLine ("!" + row2.BirthDt + "!");
+					}
 				}
             }
 
@@ -61,21 +64,23 @@ namespace SimpleDataTest
             foreach (var row in result4)
             {
                 Console.WriteLine(row.UserId + ": " + row.Name);
-                IEnumerable<UserDetailInfo> UserDetailInfo = row.UserDetailInfo;
-                foreach (var row2 in row.UserDetailInfo)
-                {
-                    Console.WriteLine("!" + row2.BirthDt + "!");
-                }
+				if (row.UserDetailInfo != null)
+				{
+					foreach (var row2 in row.UserDetailInfo)
+					{
+						Console.WriteLine ("!" + row2.BirthDt + "!");
+					}
+				}
             }
 
 
-            //db.UserInfo.Insert(UserId: "superdev", Name:"���");
+            //db.UserInfo.Insert(UserId: "superdev", Name:"김상린");
             //db.UserDetailInfo.Insert(UserId: "superdev", BirthDt: "1972-01-01");
             //db.UserExtraInfo.Insert(UserId: "spowner");
-
-            UserInfo info = db.UserInfo.Get("spowner");
-            info.DelYn = "N";
-            db.UserInfo.Update(info);
+//			db.userinfo.insert(userid: "test2", name:"테스트2");
+//			UserInfo info = db.UserInfo.Get("spowner");
+//            info.DelYn = "N";
+//            db.UserInfo.Update(info);
 		}
 	}
 }

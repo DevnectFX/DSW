@@ -17,6 +17,10 @@ namespace DSW.Modules
 			Get["/test/test"] = _ => {
 				return View["Test/Test"];
 			};
+
+			Get["/abc"] = _ => {
+				return View["Test2"];
+			};
 		}
 	}
 }

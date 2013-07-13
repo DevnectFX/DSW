@@ -4,7 +4,7 @@
     <ExportFile Include="WebContents\**\*.*">
 		<PrefixPath>WebContents</PrefixPath>
 	</ExportFile>
-    <ExportFile Include="Views\**\*.*">
+    <ExportFile Include="Views\**\*.cshtml">
 		<PrefixPath>Views</PrefixPath>
 	</ExportFile>
   </ItemGroup>

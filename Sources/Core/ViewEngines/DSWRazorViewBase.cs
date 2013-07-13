@@ -2,7 +2,6 @@ using System;
 using Nancy.ViewEngines.Razor;
 using Nancy.ViewEngines;
 using System.Linq;
-using DSW.Model;
 using DSW;
 using DSW.Extention;
 
@@ -24,12 +23,16 @@ namespace DSW.ViewEngines.Razor
 
 		private static string GetLayout(IRenderContext renderContext)
 		{
-			var path = renderContext.Context.Request.Path;
-			var header = path.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-			string result = "/";
-			if (header.Length > 0)
-				result = "/" + header[1] + "/" + header[1].ToFirstUpper();
-			result += "Layout.cshtml";
+            var viewName = renderContext.Context.NegotiationContext.ViewName;
+			var isPopup = viewName.EndsWith("Popup");
+			var header = viewName.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            string result = "/";
+            if (header.Length >= 2)
+                result = "/" + header[0] + "/" + header[0].ToFirstUpper();
+			if (isPopup == true)
+				result += "PopupLayout.cshtml";
+			else
+				result += "Layout.cshtml";
 
 			return result;
 		}
