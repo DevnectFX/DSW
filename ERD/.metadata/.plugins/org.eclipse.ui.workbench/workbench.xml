@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="12" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="560" y="105">
+<window height="768" maximized="true" width="1024" x="-1235" y="279">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -27,16 +27,12 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="W:/DevnectFX/DSW/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="W:/DevnectFX/DSW/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/common.exerd"/>
-</editor>
-<editor id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" partName="dsw.xdic" path="W:/DevnectFX/DSW/ERD/DSW/dsw.xdic" title="dsw.xdic" tooltip="DSW/dsw.xdic" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/dsw.xdic"/>
 </editor>
 </editors>
 <views>
@@ -52,7 +48,7 @@
 <element path="/DSW"/>
 </expanded>
 <selection>
-<element path="/DSW/common.erdx"/>
+<element path="/DSW/common.exerd"/>
 </selection>
 </viewState>
 </view>
@@ -78,7 +74,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.tomato.exerd.ui.views.domain" activePerspective="com.tomato.exerd.perspective.design">
+<perspectives activePart="com.tomato.exerd.editor.DiagramEditor" activePerspective="com.tomato.exerd.perspective.design">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.tomato.exerd.perspective.ExerdPerspectiveFactory" id="com.tomato.exerd.perspective.design" label="eXERD"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -181,7 +177,6 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.exerd"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common_oracle.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common_ibm2.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
@@ -189,56 +184,57 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
 </editors>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common_oracle.exerd" index="1"/>
+<item historyLabel="common_ibm2.exerd" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common_ibm2.exerd" index="2"/>
+<item historyLabel="common_ibm2.exerd" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common_ibm2.exerd" index="2"/>
+<item historyLabel="common_ibm2.exerd" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common_ibm2.exerd" index="2"/>
+<item historyLabel="common_ibm2.exerd" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common_ibm2.exerd" index="2"/>
+<item historyLabel="common.erdx" index="2"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="3"/>
+<item historyLabel="common.erdx" index="2"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="3"/>
+<item historyLabel="common.erdx" index="2"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="3"/>
+<item historyLabel="dsw.xdic" index="3"/>
+<item historyLabel="common.erdx" index="2"/>
+<item historyLabel="dsw.xdic" index="3"/>
+<item historyLabel="common.erdx" index="2"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="4"/>
-<item historyLabel="common.erdx" index="3"/>
-<item historyLabel="dsw.xdic" index="4"/>
-<item historyLabel="common.erdx" index="3"/>
+<item historyLabel="common.erdx" index="2"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="3"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="5">
+<item historyLabel="common.erdx" index="4">
 <position/>
 </item>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="6"/>
+<item historyLabel="common.erdx" index="5"/>
+<item historyLabel="common.exerd" index="0"/>
+<item historyLabel="common.erdx" index="5"/>
+<item historyLabel="common.exerd" index="0"/>
+<item historyLabel="common.erdx" index="5"/>
 <item historyLabel="common.exerd" index="0"/>
 <item historyLabel="common.erdx" index="6"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="6"/>
+<item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="7"/>
+<item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
+<item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
+<item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
+<item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
+<item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
+<item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
+<item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
 <item historyLabel="dsw.xdic" index="8"/>
 <item active="true" historyLabel="common.exerd" index="0"/>
@@ -259,6 +255,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" tooltip="DSW/common.exerd">
+<persistable path="/DSW/common.exerd"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="common.erdx" tooltip="DSW/common.erdx">
 <persistable path="/DSW/common.erdx"/>
 </file>
@@ -273,9 +272,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common2.exerd" tooltip="DSW/common2.exerd">
 <persistable path="/DSW/common2.exerd"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" tooltip="DSW/common.exerd">
-<persistable path="/DSW/common.exerd"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="org.eclipse.core.resources.prefs" tooltip="DSW/.settings/org.eclipse.core.resources.prefs">
 <persistable path="/DSW/.settings/org.eclipse.core.resources.prefs"/>

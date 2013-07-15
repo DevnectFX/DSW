@@ -22,6 +22,24 @@ namespace SimpleDataTest
         public string UserId { get; set; }
     }
 
+	public class MenuInfo
+	{
+		public string MenuId { get; set; }
+		public string ParentMenuId { get; set; }
+		public string MenuTxt { get; set; }
+		public string MenuDescTxt { get; set; }
+		public int SortOrder { get; set; }
+		public string MenuPath { get; set; }
+		public string ExtraInfo { get; set; }
+		public string UseYn { get; set; }
+		public string ChngId { get; set; }
+		public DateTime ChngDt { get; set; }
+		public string CreateId { get; set; }
+		public DateTime CreateDt { get; set; }
+
+		public IList<MenuInfo> ParentMenuInfo { get; set; }
+	}
+
 	class MainClass
 	{
 		public static void Main (string[] args)
@@ -81,6 +99,40 @@ namespace SimpleDataTest
 //			UserInfo info = db.UserInfo.Get("spowner");
 //            info.DelYn = "N";
 //            db.UserInfo.Update(info);
+
+//			var menu = new MenuInfo {
+//				MenuId = "M1000",
+//				MenuTxt = "테스트 대메뉴",
+//				UseYn = "Y",
+//				CreateId = "spowner",
+//				CreateDt = DateTime.Now
+//			};
+//			var menu = new MenuInfo {
+//				MenuId = "M1100",
+//				ParentMenuId = "M1000",
+//				MenuTxt = "테스트 중메뉴",
+//				UseYn = "Y",
+//				CreateId = "spowner",
+//				CreateDt = DateTime.Now
+//			};
+//			var menu = new MenuInfo {
+//				MenuId = "M1110",
+//				ParentMenuId = "M1100",
+//				MenuTxt = "테스트 소메뉴",
+//				UseYn = "Y",
+//				CreateId = "spowner",
+//				CreateDt = DateTime.Now
+//			};
+//			db.MenuInfo.Insert (menu);
+
+			dynamic parentMenuInfo;
+			//IEnumerable<MenuInfo> menu = db.MenuInfo.All ().Join (db.MenuInfo.As ("ParentMenuInfo"), out parentMenuInfo).On (db.MenuInfo.ParentMenuId == parentMenuInfo.MenuId).WithOne (parentMenuInfo);
+			var menu = db.MenuInfo.All ().Join (db.MenuInfo.As ("ParentMenuInfo"), out parentMenuInfo).On (db.MenuInfo.ParentMenuId == parentMenuInfo.MenuId).WithOne (parentMenuInfo);
+
+			Console.WriteLine (parentMenuInfo);
+			foreach (var row in menu) {
+				Console.WriteLine (row.MenuId + ": " + row.MenuTxt + ",   " + row.ParentMenuId + ",    " + row.ParentMenuInfo);
+			}
 		}
 	}
 }
