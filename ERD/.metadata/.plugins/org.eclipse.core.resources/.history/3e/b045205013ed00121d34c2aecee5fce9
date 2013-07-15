@@ -406,7 +406,7 @@
             UUID="Column_LidIkOemEeKuFeb9mp7pmQ" logicalName="정렬순서" physicalName="SORT_ORDER"
             domain="//@configuration/@domainDefinition/@domain.0/@domain.1" notNull="TRUE"/><columns
             UUID="Column_6DRAUOqDEeKPZ9Bcl_wbpw" logicalName="메뉴경로" physicalName="MENU_PATH"
-            domain="//@configuration/@domainDefinition/@domain.1/@domain.7" notNull="FALSE"/><columns
+            domain="//@configuration/@domainDefinition/@domain.1/@domain.7" notNull="TRUE"/><columns
             UUID="Column_UrajoOqEEeKPZ9Bcl_wbpw" logicalName="추가정보" physicalName="EXTRA_INFO"
             domain="//@configuration/@domainDefinition/@domain.1/@domain.8"/><columns
             UUID="Column_oij0AOehEeKuFeb9mp7pmQ" logicalName="사용유무" physicalName="USE_YN"

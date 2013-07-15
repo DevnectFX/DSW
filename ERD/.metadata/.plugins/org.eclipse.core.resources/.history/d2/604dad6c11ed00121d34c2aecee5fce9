@@ -40,7 +40,4 @@
   <term name="전체" description="전체" physicalName="FULL" physicalDescription="Full"/>
   <term name="크기" description="크기" physicalName="SIZE" physicalDescription="Size"/>
   <term name="첨부" description="첨부" physicalName="ATTACH" physicalDescription="Attach"/>
-  <term name="조회" description="조회" physicalName="SEARCH" physicalDescription="Search"/>
-  <term name="갱신" description="갱신" physicalName="UPDATE" physicalDescription="Update"/>
-  <term name="읽기" description="읽기" physicalName="READ" physicalDescription="Read"/>
 </tm:TermDictionary>

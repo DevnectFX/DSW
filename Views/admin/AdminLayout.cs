@@ -25,7 +25,11 @@ public partial class AdminLayout : Nancy.ViewEngines.Razor.NancyRazorViewBase<dy
 
 public override void Execute()
 {
-WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta");
+WriteLiteral("<!DOCTYPE html>\r\n<html");
+
+WriteLiteral(" lang=\"ko\"");
+
+WriteLiteral(">\r\n  <head>\r\n    <meta");
 
 WriteLiteral(" charset=\"utf-8\"");
 
@@ -78,12 +82,7 @@ WriteLiteral(" href=\"/common/bootstrap/css/bootstrap-responsive.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(" />\r\n\r\n    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->\r\n    <!--[if " +
-"lt IE 9]>\r\n      <script");
-
-WriteLiteral(" src=\"/common/bootstrap/js/html5shiv.js\"");
-
-WriteLiteral("></script>\r\n    <![endif]-->\r\n    <link");
+WriteLiteral(" />\r\n    <link");
 
 WriteLiteral(" href=\"/common/kendoui.web/styles/kendo.common.min.css\"");
 
@@ -103,43 +102,14 @@ WriteLiteral("></script>\r\n    <script");
 
 WriteLiteral(" src=\"/common/kendoui.web/js/kendo.all.min.js\"");
 
-WriteLiteral("></script>\r\n\r\n\r\n    <!-- Fav and touch icons -->\r\n    <link");
+WriteLiteral("></script>\r\n\r\n\r\n    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->\r\n   " +
+" <!--[if lt IE 9]>\r\n      <script");
 
-WriteLiteral(" rel=\"apple-touch-icon-precomposed\"");
+WriteLiteral(" src=\"/common/bootstrap/js/html5shiv.js\"");
 
-WriteLiteral(" sizes=\"144x144\"");
-
-WriteLiteral(" href=\"/common/bootstrap/ico/apple-touch-icon-144-precomposed.png\"");
-
-WriteLiteral(">\r\n    <link");
-
-WriteLiteral(" rel=\"apple-touch-icon-precomposed\"");
-
-WriteLiteral(" sizes=\"114x114\"");
-
-WriteLiteral(" href=\"/common/bootstrap/ico/apple-touch-icon-114-precomposed.png\"");
-
-WriteLiteral(">\r\n      <link");
-
-WriteLiteral(" rel=\"apple-touch-icon-precomposed\"");
-
-WriteLiteral(" sizes=\"72x72\"");
-
-WriteLiteral(" href=\"/common/bootstrap/ico/apple-touch-icon-72-precomposed.png\"");
-
-WriteLiteral(">\r\n                    <link");
-
-WriteLiteral(" rel=\"apple-touch-icon-precomposed\"");
-
-WriteLiteral(" href=\"/common/bootstrap/ico/apple-touch-icon-57-precomposed.png\"");
-
-WriteLiteral(">\r\n                                   <link");
-
-WriteLiteral(" rel=\"shortcut icon\"");
-
-WriteLiteral(" href=\"/common/bootstrap/ico/favicon.png\"");
-
-WriteLiteral(">\r\n  </head>\r\n\r\n  <body>\r\n\r\n    <div");
+WriteLiteral("></script>\r\n    <![endif]-->\r\n    \r\n    <script>\r\n        $(document).ready(funct" +
+"ion() {\r\n            $(\"#panelbar\").kendoPanelBar();\r\n        });\r\n    </script>" +
+"\r\n  </head>\r\n\r\n  <body>\r\n    <div");
 
 WriteLiteral(" class=\"navbar navbar-inverse navbar-fixed-top\"");
 
@@ -179,7 +149,7 @@ WriteLiteral(" class=\"brand\"");
 
 WriteLiteral(" href=\"#\"");
 
-WriteLiteral(">Project name</a>\r\n          <div");
+WriteLiteral(">愿由ъ옄 ?섏씠吏</a>\r\n          <div");
 
 WriteLiteral(" class=\"nav-collapse collapse\"");
 
@@ -187,13 +157,23 @@ WriteLiteral(">\r\n            <p");
 
 WriteLiteral(" class=\"navbar-text pull-right\"");
 
-WriteLiteral(">\r\n              Logged in as <a");
+WriteLiteral(">\r\n              <a");
 
 WriteLiteral(" href=\"#\"");
 
 WriteLiteral(" class=\"navbar-link\"");
 
-WriteLiteral(">Username</a>\r\n            </p>\r\n            <ul");
+WriteLiteral(">愿由ъ옄(admin)</a> <a");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(" class=\"navbar-link\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"icon-remove-sign\"");
+
+WriteLiteral("></i> Logout</a>\r\n            </p>\r\n            <ul");
 
 WriteLiteral(" class=\"nav\"");
 
@@ -205,16 +185,16 @@ WriteLiteral("><a");
 
 WriteLiteral(" href=\"#\"");
 
-WriteLiteral(">Home</a></li>\r\n              <li><a");
+WriteLiteral(">?쒖뒪?쒓?由?/a></li>\r\n              <li><a");
 
 WriteLiteral(" href=\"#about\"");
 
-WriteLiteral(">About</a></li>\r\n              <li><a");
+WriteLiteral(">硫붾돱2</a></li>\r\n              <li><a");
 
 WriteLiteral(" href=\"#contact\"");
 
-WriteLiteral(">Contact</a></li>\r\n            </ul>\r\n          </div><!--/.nav-collapse -->\r\n   " +
-"     </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div");
+WriteLiteral(">硫붾돱3</a></li>\r\n            </ul>\r\n          </div><!--/.nav-collapse -->\r\n      " +
+"  </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div");
 
 WriteLiteral(" class=\"container\"");
 
@@ -226,168 +206,73 @@ WriteLiteral(">\r\n        <div");
 
 WriteLiteral(" class=\"span3\"");
 
-WriteLiteral(">\r\n        <div");
+WriteLiteral(">\r\n          <div");
 
-WriteLiteral(" id=\"organizer\"");
+WriteLiteral(" class=\"k-content\"");
 
-WriteLiteral(">\r\n            <ul");
+WriteLiteral(">\r\n          \t<ul");
 
 WriteLiteral(" id=\"panelbar\"");
 
-WriteLiteral(">\r\n            <li");
+WriteLiteral(">\r\n          \t\t<li");
 
 WriteLiteral(" class=\"k-state-active\"");
 
-WriteLiteral(">\r\n                <span");
+WriteLiteral("><span");
 
 WriteLiteral(" class=\"k-link k-state-selected\"");
 
-WriteLiteral(">My Teammates</span>\r\n                <div");
+WriteLiteral("><i");
 
-WriteLiteral(" style=\"padding: 10px;\"");
+WriteLiteral(" class=\"icon-th-list\"");
 
-WriteLiteral(">\r\n                    <div");
+WriteLiteral("></i> 硫붾돱愿由?/span>\r\n          \t\t\t<ul>\r\n          \t\t\t\t<li><i");
 
-WriteLiteral(" class=\"teamMate\"");
+WriteLiteral(" class=\"icon-chevron-right\"");
 
-WriteLiteral(">\r\n                        <img");
+WriteLiteral("></i> 硫붾돱?깅줉愿由?/li>\r\n          \t\t\t\t<li><i");
 
-WriteLiteral(" src=\"../../content/web/panelbar/andrew.jpg\"");
+WriteLiteral(" class=\"icon-chevron-right\"");
 
-WriteLiteral(" alt=\"Andrew Fuller\"");
+WriteLiteral("></i> ?ъ슜?먮찓?닿?由?/li>\r\n          \t\t\t\t<li><i");
 
-WriteLiteral(">\r\n                        <h2>Andrew Fuller</h2>\r\n                        <p>Tea" +
-"m Lead</p>\r\n                    </div>\r\n                    <div");
+WriteLiteral(" class=\"icon-chevron-right\"");
 
-WriteLiteral(" class=\"teamMate\"");
+WriteLiteral("></i> 洹몃９硫붾돱愿由?/li>\r\n      \t\t\t\t</ul>\r\n          \t\t</li>\r\n          \t\t<li><span");
 
-WriteLiteral(">\r\n                        <img");
+WriteLiteral(" class=\"k-link\"");
 
-WriteLiteral(" src=\"../../content/web/panelbar/nancy.jpg\"");
+WriteLiteral("><i");
 
-WriteLiteral(" alt=\"Nancy Leverling\"");
+WriteLiteral(" class=\"icon-th-list\"");
 
-WriteLiteral(">\r\n                        <h2>Nancy Leverling</h2>\r\n                        <p>S" +
-"ales Associate</p>\r\n                    </div>\r\n                    <div");
+WriteLiteral("></i> ?ъ슜??洹몃９愿由?/span>\r\n          \t\t\t<ul>\r\n          \t\t\t\t<li><i");
 
-WriteLiteral(" class=\"teamMate\"");
+WriteLiteral(" class=\"icon-chevron-right\"");
 
-WriteLiteral(">\r\n                        <img");
+WriteLiteral("></i> ?ъ슜?먭?由?/li>\r\n          \t\t\t\t<li><i");
 
-WriteLiteral(" src=\"../../content/web/panelbar/robert.jpg\"");
+WriteLiteral(" class=\"icon-chevron-right\"");
 
-WriteLiteral(" alt=\"Robert King\"");
-
-WriteLiteral(@">
-                        <h2>Robert King</h2>
-                        <p>Business System Analyst</p>
-                    </div>
-                </div>
-            </li>
-            <li>
-                Projects
-                <ul>
-                    <li>New Business Plan</li>
-                    <li>
-                        Sales Forecasts
-                        <ul>
-                            <li>Q1 Forecast</li>
-                            <li>Q2 Forecast</li>
-                            <li>Q3 Forecast</li>
-                            <li>Q4 Forecast</li>
-                        </ul>
-                    </li>
-                    <li>Sales Reports</li>
-                </ul>
-
-            </li>
-            <li>
-                Programs
-                <ul>
-                    <li>Monday</li>
-                    <li>Tuesday</li>
-                    <li>Wednesday</li>
-                    <li>Thursday</li>
-                    <li>Friday</li>
-                </ul>
-            </li>
-            <li");
-
-WriteLiteral(" disabled=\"disabled\"");
-
-WriteLiteral(">\r\n                Communication\r\n            </li>\r\n        </ul>\r\n            <" +
-"div");
-
-WriteLiteral(" id=\"bottom\"");
-
-WriteLiteral(@"></div>
-        </div>
-        <style scoped>
-            .teamMate:after {
-                content: ""."";
-                display: block;
-                height: 0;
-                line-height: 0;
-                clear: both;
-                visibility: hidden;
-            }
-            .teamMate h2 {
-                font-size: 1.4em;
-                font-weight: normal;
-                padding-top: 20px;
-            }
-            .teamMate p {
-                margin: 5px 0;
-            }
-            .teamMate img {
-                float: left;
-                margin: 5px 15px 5px 5px;
-                border: 1px solid #ccc;
-            }
-        </style>
-        <script>
-            $(document).ready(function() {
-                $(""#panelbar"").kendoPanelBar({
-                    expandMode: ""single""
-                });
-            });
-        </script>
-        </div><!--/span-->
-        <div");
+WriteLiteral("></i> 洹몃９愿由?/li>\r\n      \t\t\t\t</ul>\r\n      \t\t\t</li>\r\n          \t</ul>\r\n          <" +
+"/div>\r\n        </div><!--/span-->\r\n        <div");
 
 WriteLiteral(" class=\"span9\"");
 
 WriteLiteral(">\r\n");
 
-WriteLiteral("          ");
+WriteLiteral("        \t");
 
 
-#line 166 "W:\DevnectFX\DSW\Views\admin\AdminLayout.cshtml"
-     Write(RenderBody());
+#line 96 "W:\DevnectFX\DSW\Views\admin\AdminLayout.cshtml"
+    Write(RenderBody());
 
 
 #line default
 #line hidden
-WriteLiteral(@"
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <hr />
-
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
-
-    </div><!--/.fluid-container-->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-
-  </body>
-</html>
-");
+WriteLiteral("\r\n        </div><!--/span-->\r\n      </div><!--/row-->\r\n\r\n      <hr />\r\n\r\n      <f" +
+"ooter>\r\n        <p>&copy; Company 2013</p>\r\n      </footer>\r\n\r\n    </div><!--/.f" +
+"luid-container-->\r\n  </body>\r\n</html>\r\n");
 
 }
 }

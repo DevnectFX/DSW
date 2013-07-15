@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="12" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="-1235" y="279">
+<window height="768" maximized="true" width="1024" x="345" y="179">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -27,12 +27,16 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="W:/DevnectFX/DSW/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/common.exerd"/>
+</editor>
+<editor id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" partName="dsw.xdic" path="W:/DevnectFX/DSW/ERD/DSW/dsw.xdic" title="dsw.xdic" tooltip="DSW/dsw.xdic" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/dsw.xdic"/>
 </editor>
 </editors>
 <views>
@@ -185,13 +189,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
 </editors>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common_ibm2.exerd" index="1"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common_ibm2.exerd" index="1"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common_ibm2.exerd" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
 <item historyLabel="common_ibm2.exerd" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
@@ -237,6 +236,12 @@
 <item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
 <item historyLabel="dsw.xdic" index="8"/>
+<item historyLabel="common.exerd" index="0"/>
+<item historyLabel="dsw.xdic" index="9"/>
+<item historyLabel="common.exerd" index="0"/>
+<item historyLabel="dsw.xdic" index="9"/>
+<item historyLabel="common.exerd" index="0"/>
+<item historyLabel="dsw.xdic" index="9"/>
 <item active="true" historyLabel="common.exerd" index="0"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -255,14 +260,14 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" tooltip="DSW/dsw.xdic">
+<persistable path="/DSW/dsw.xdic"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" tooltip="DSW/common.exerd">
 <persistable path="/DSW/common.exerd"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="common.erdx" tooltip="DSW/common.erdx">
 <persistable path="/DSW/common.erdx"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" tooltip="DSW/dsw.xdic">
-<persistable path="/DSW/dsw.xdic"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common_ibm2.exerd" tooltip="DSW/common_ibm2.exerd">
 <persistable path="/DSW/common_ibm2.exerd"/>

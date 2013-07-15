@@ -89,7 +89,7 @@
     <Compile Include="Sources\Models\UserInfo.cs" />
     <Compile Include="Views\admin\AdminLayout.cs">
       <DependentUpon>AdminLayout.cshtml</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="Views\admin\AdminLayoutPopup.cs">
       <DependentUpon>AdminPopupLayout.cshtml</DependentUpon>
     </Compile>

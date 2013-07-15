@@ -120,6 +120,8 @@ CREATE TABLE MenuInfo (
    , MENU_TXT varchar(32) NOT NULL     -- 메뉴명
    , MENU_DESC_TXT varchar(256)     -- 메뉴설명
    , SORT_ORDER int NOT NULL DEFAULT '0'     -- 정렬순서
+   , MENU_PATH varchar(256)     -- 메뉴경로
+   , EXTRA_INFO varchar(256)     -- 추가정보
    , USE_YN char(1) NOT NULL DEFAULT 'Y'     -- 사용유무
    , CHNG_ID varchar(16)     -- 변경아이디
    , CHNG_DT datetime     -- 변경시각
@@ -139,6 +141,10 @@ DROP TABLE UserMenu;
 CREATE TABLE UserMenu (
      USER_ID varchar(16) NOT NULL     -- 사용자아이디
    , MENU_ID varchar(16) NOT NULL     -- 메뉴아이디
+   , CREATE_AUTH char(1) NOT NULL DEFAULT 'N'     -- 생성권한
+   , READ_AUTH char(1) NOT NULL DEFAULT 'N'     -- 읽기권한
+   , UPDATE_AUTH char(1) NOT NULL DEFAULT 'N'     -- 갱신권한
+   , DEL_AUTH char(1) NOT NULL DEFAULT 'N'     -- 삭제권한
    , HIDE_YN char(1) NOT NULL DEFAULT 'N'     -- 숨김유무
    , REG_ID varchar(16) NOT NULL     -- 등록아이디
    , REG_DT datetime NOT NULL     -- 등록시각
@@ -151,6 +157,10 @@ DROP TABLE GroupMenu;
 CREATE TABLE GroupMenu (
      GROUP_ID varchar(16) NOT NULL     -- 그룹아이디
    , MENU_ID varchar(16) NOT NULL     -- 메뉴아이디
+   , CREATE_AUTH char(1) NOT NULL DEFAULT 'N'     -- 생성권한
+   , READ_AUTH char(1) NOT NULL DEFAULT 'N'     -- 읽기권한
+   , UPDATE_AUTH char(1) NOT NULL DEFAULT 'N'     -- 갱신권한
+   , DEL_AUTH char(1) NOT NULL DEFAULT 'N'     -- 삭제권한
    , HIDE_YN char(1) NOT NULL DEFAULT 'N'     -- 숨김유무
    , REG_ID varchar(16) NOT NULL     -- 등록아이디
    , REG_DT datetime NOT NULL     -- 등록시각
@@ -179,4 +189,16 @@ CREATE TABLE Message (
    , CREATE_ID varchar(16) NOT NULL     -- 생성아이디
    , CREATE_DT datetime NOT NULL     -- 생성시각
    , PRIMARY KEY(MSG_ID)
+);
+-- 첨부파일정보
+DROP TABLE AttachFileInfo;
+CREATE TABLE AttachFileInfo (
+     ATTACH_FILE_SEQ integer NOT NULL DEFAULT '1'     -- 첨부파일순번
+   , FILE_UUID varchar(40) NOT NULL     -- 파일UUID
+   , FILE_PATH varchar(256) NOT NULL     -- 파일경로
+   , FILE_TXT varchar(256) NOT NULL     -- 파일명
+   , FILE_SIZE integer NOT NULL     -- 파일크기
+   , CREATE_ID varchar(16) NOT NULL     -- 생성아이디
+   , CREATE_DT datetime NOT NULL     -- 생성시각
+   , PRIMARY KEY(ATTACH_FILE_SEQ, FILE_UUID)
 );
