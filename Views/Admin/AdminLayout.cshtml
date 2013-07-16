@@ -32,9 +32,9 @@
     <link href="/common/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
     <link href="/common/kendoui.web/styles/kendo.common.min.css" rel="stylesheet" />
     <link href="/common/kendoui.web/styles/kendo.default.min.css" rel="stylesheet" />
-    <script src="/common/kendoui.web/js/jquery.min.js"></script>
+    <script src="/common/jquery/jquery-1.10.2.min.js"></script>
+    <script src="/common/bootstrap/js/bootstrap.min.js"></script>
     <script src="/common/kendoui.web/js/kendo.all.min.js"></script>
-
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -42,13 +42,14 @@
     <![endif]-->
     
     <script>
-        $(document).ready(function()
-        {
-            $("#panelbar").kendoPanelBar({
-    			expandMode: "single"
-			});
-		});
+    $(document).ready(function()
+    {
+      $("#panelbar").kendoPanelBar({
+          expandMode: "single"
+      });
+    });
     </script>
+    @RenderSection("body", false)
   </head>
 
   <body>
@@ -79,31 +80,37 @@
       <div class="row">
         <div class="span3">
           <div class="k-content">
-          	<ul id="panelbar">
-          		<li class="k-state-active"><span class="k-link k-state-selected"><i class="icon-th-list"></i> 메뉴관리</span>
-          			<ul>
-          				<li><i class="icon-chevron-right"></i> 메뉴등록관리</li>
-          				<li><i class="icon-chevron-right"></i> 사용자메뉴관리</li>
-          				<li><i class="icon-chevron-right"></i> 그룹메뉴관리</li>
-      				</ul>
-          		</li>
-          		<li><span class="k-link"><i class="icon-th-list"></i> 사용자/그룹관리</span>
-          			<ul>
-          				<li><i class="icon-chevron-right"></i> 사용자관리</li>
-          				<li><i class="icon-chevron-right"></i> 그룹관리</li>
-      				</ul>
-      			</li>
-          		<li><span class="k-link"><i class="icon-th-list"></i> 사용자/그룹관리</span>
-          			<ul>
-          				<li><i class="icon-chevron-right"></i> 사용자관리</li>
-          				<li><i class="icon-chevron-right"></i> 그룹관리</li>
-      				</ul>
-      			</li>
-          	</ul>
+            <ul id="panelbar">
+              <li class="k-state-active"><span class="k-link k-state-selected"><i class="icon-th-list"></i> 메뉴관리</span>
+                <ul>
+                  <li><i class="icon-chevron-right"></i> 메뉴등록관리</li>
+                  <li><i class="icon-chevron-right"></i> 사용자메뉴관리</li>
+                  <li><i class="icon-chevron-right"></i> 그룹메뉴관리</li>
+              </ul>
+              </li>
+              <li><span class="k-link"><i class="icon-th-list"></i> 사용자/그룹관리</span>
+                <ul>
+                  <li><i class="icon-chevron-right"></i> 사용자관리</li>
+                  <li><i class="icon-chevron-right"></i> 그룹관리</li>
+              </ul>
+            </li>
+              <li><span class="k-link"><i class="icon-th-list"></i> 사용자/그룹관리</span>
+                <ul>
+                  <li><i class="icon-chevron-right"></i> 사용자관리</li>
+                  <li><i class="icon-chevron-right"></i> 그룹관리</li>
+              </ul>
+            </li>
+            </ul>
           </div>
         </div><!--/span-->
         <div class="span9">
-        	@RenderBody()
+          <div class="row">
+          <div class="span12">
+          <div class="row">
+              @RenderBody()
+          </div>
+          </div>
+          </div>
         </div><!--/span-->
       </div><!--/row-->
 
