@@ -194,12 +194,16 @@ CREATE TABLE {0} (";
 
         private static void PrintHeader()
         {
-            Console.WriteLine("erdx2sql Ver. 0.1 copyright(c) (주)데브넥트");
+            Console.WriteLine("erdx2sql for SQLite Ver. 0.1 by spowner(me@spowner.com)");
         }
         
         private static void PrintUsage()
         {
             Console.WriteLine("사용법: erdx2sql filename.erdx [output.sql]");
+            Console.WriteLine("  erdx2sql for SQLite는 eXERD로 작성한 ERD를 이용해 쉽게 SQLite용 생성쿼리를");
+            Console.WriteLine("  생성하는 툴입니다. ERD 생성시 DB를 MSSQL로 선택해야 하며 현재 도메인은 두단계");
+            Console.WriteLine("  까지 지원합니다. PK, FK 및 DEFAULT, AUTOINCREMENT 값에 대해 잘 변환해줍니다.");
+            Console.WriteLine("  eXERD를 개인 사용자에게 공개해주신 (주)토마토시스템에 감사드립니다.");
         }
 
         private static XmlNode GetDomainNode(XmlDocument root, string path)

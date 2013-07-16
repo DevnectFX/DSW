@@ -130,8 +130,8 @@
   <ItemGroup />
   <Import Project="exports.xml" />
   <Target Name="CopyExportFiles" AfterTargets="Build">
-    <Message Text="Copy Export Files : @(ExportFile-&gt;'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
-    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile-&gt;'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Message Text="Copy Export Files : @(ExportFile->'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
+    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile->'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
   </Target>
   <Target Name="ClearExportFiles" AfterTargets="Clean">
     <Message Text="Remove Export Directory : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
