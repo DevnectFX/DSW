@@ -13,7 +13,7 @@ CREATE TABLE UserInfo (
 DROP TABLE UserCert;
 CREATE TABLE UserCert (
      USER_ID varchar(16) NOT NULL     -- 사용자아이디
-   , PASSWD varchar(64) NOT NULL     -- 암호
+   , PASSWD varchar(256) NOT NULL     -- 암호
    , PRIMARY KEY(USER_ID)
    , FOREIGN KEY(USER_ID) REFERENCES UserInfo(USER_ID)
 );
@@ -148,7 +148,7 @@ CREATE TABLE UserMenu (
    , HIDE_YN char(1) NOT NULL DEFAULT 'N'     -- 숨김유무
    , REG_ID varchar(16) NOT NULL     -- 등록아이디
    , REG_DT datetime NOT NULL     -- 등록시각
-   , PRIMARY KEY(USER_ID)
+   , PRIMARY KEY(USER_ID, MENU_ID)
    , FOREIGN KEY(USER_ID) REFERENCES UserInfo(USER_ID)
    , FOREIGN KEY(MENU_ID) REFERENCES MenuInfo(MENU_ID)
 );
@@ -164,7 +164,7 @@ CREATE TABLE GroupMenu (
    , HIDE_YN char(1) NOT NULL DEFAULT 'N'     -- 숨김유무
    , REG_ID varchar(16) NOT NULL     -- 등록아이디
    , REG_DT datetime NOT NULL     -- 등록시각
-   , PRIMARY KEY(GROUP_ID)
+   , PRIMARY KEY(GROUP_ID, MENU_ID)
    , FOREIGN KEY(GROUP_ID) REFERENCES GroupInfo(GROUP_ID)
    , FOREIGN KEY(MENU_ID) REFERENCES MenuInfo(MENU_ID)
 );

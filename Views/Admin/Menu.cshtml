@@ -1,15 +1,7 @@
 ﻿@inherits DSW.ViewEngines.Razor.DSWRazorViewBase<dynamic>
-@{ ViewBag.Title = "메뉴등록관리"; }
-@section body
-{
-  <script>
-    $(document).ready(function()
-    {
-      $("#treeview").kendoTreeView();
-    });
-  </script>
+@{
+  ViewBag.Title = "메뉴등록관리";
 }
-
 <div class="span4"> <!-- 왼쪽 메뉴 트리 -->
   <ul id="treeview">
     <li><span>시스템관리</span>
@@ -17,5 +9,13 @@
   </ul>
 </div>
 <div class="span8"> <!-- 오른쪽 메뉴 상세 -->
-  B
+  @Model
 </div>
+@section body {
+  <script>
+    $(document).ready(function()
+    {
+      $("#treeview").kendoTreeView();
+    });
+  </script>
+}

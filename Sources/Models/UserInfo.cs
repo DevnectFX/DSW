@@ -1,11 +1,13 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using Nancy.Security;
 
 namespace DSW.Models
 {
 	/// <summary>
 	/// 사용자 정보
 	/// </summary>
-	public class UserInfo
+	public class UserInfo : IUserIdentity
 	{
 		/// <summary>
 		/// 사용자 아이디
@@ -27,6 +29,16 @@ namespace DSW.Models
 		/// </summary>
 		/// <value>그룹 아이디</value>
 		public string GroupId { get; set; }
+
+		
+		public string UserName {
+			get
+			{
+				return Name;
+			}
+		}
+		
+		public IEnumerable<string> Claims { get; set; }
 	}
 }
 

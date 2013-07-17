@@ -574,11 +574,11 @@
           logicalName="첨부파일정보" physicalName="AttachFileInfo"><physicalProperties xsi:type="sqlserver:TableProperties"/><columns
             UUID="Column_dkqKUOqGEeKPZ9Bcl_wbpw" logicalName="첨부파일순번" physicalName="ATTACH_FILE_SEQ"
             domain="//@configuration/@domainDefinition/@domain.0/@domain.0"><physicalProperties
-              xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/></physicalProperties><memberships
-              key="PKCGroup_Wpkc8uqFEeKPZ9Bcl_wbpw"><value xsi:type="e:PrimaryKeyMembership"
-                group="PKCGroup_Wpkc8uqFEeKPZ9Bcl_wbpw" entryIndex="0"/></memberships></columns><columns
-            UUID="Column_Wpkc8eqFEeKPZ9Bcl_wbpw" logicalName="파일UUID" physicalName="FILE_UUID"
-            domain="//@configuration/@domainDefinition/@domain.1/@domain.8"><physicalProperties
+              xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/><identity
+                startWith="1" incrementBy="1"/></physicalProperties><memberships key="PKCGroup_Wpkc8uqFEeKPZ9Bcl_wbpw"><value
+                xsi:type="e:PrimaryKeyMembership" group="PKCGroup_Wpkc8uqFEeKPZ9Bcl_wbpw"
+                entryIndex="0"/></memberships></columns><columns UUID="Column_Wpkc8eqFEeKPZ9Bcl_wbpw"
+            logicalName="파일UUID" physicalName="FILE_UUID" domain="//@configuration/@domainDefinition/@domain.1/@domain.8"><physicalProperties
               xsi:type="sqlserver:ColumnProperties"><xmlDataTypeDetail/></physicalProperties><memberships
               key="PKCGroup_Wpkc8uqFEeKPZ9Bcl_wbpw"><value xsi:type="e:PrimaryKeyMembership"
                 group="PKCGroup_Wpkc8uqFEeKPZ9Bcl_wbpw" entryIndex="1"/></memberships></columns><columns

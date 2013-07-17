@@ -4,21 +4,20 @@ using Nancy.ViewEngines;
 using System.Linq;
 using DSW;
 using DSW.Extention;
+using System.Collections.Generic;
 
 
 namespace DSW.ViewEngines.Razor
 {
 	public abstract class DSWRazorViewBase<TModel> : NancyRazorViewBase<TModel>
 	{
-		public DSWRazorViewBase()
+	    public DSWRazorViewBase()
 		{
 		}
 
 		public override void Initialize(RazorViewEngine engine, Nancy.ViewEngines.IRenderContext renderContext, object model)
 		{
 			base.Initialize(engine, renderContext, model);
-
-			Layout = GetLayout(renderContext);
 		}
 
 		private static string GetLayout(IRenderContext renderContext)
@@ -36,6 +35,14 @@ namespace DSW.ViewEngines.Razor
 
 			return result;
 		}
+
+        public new void ExecuteView(string body, IDictionary<string, string> sectionContents)
+        {
+            base.ExecuteView(body, sectionContents);
+
+            if (string.IsNullOrEmpty(body) == true)
+                Layout = GetLayout(RenderContext);
+        }
 	}
 
 	public abstract class DSWRazorViewBase : DSWRazorViewBase<object>
