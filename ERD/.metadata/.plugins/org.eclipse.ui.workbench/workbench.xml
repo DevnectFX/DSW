@@ -32,7 +32,7 @@
 </folder>
 </info>
 </editorArea>
-<editor focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="W:/DevnectFX/DSW/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="W:/DevnectFX/DSW/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/common.exerd"/>
 </editor>
 <editor id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" partName="dsw.xdic" path="W:/DevnectFX/DSW/ERD/DSW/dsw.xdic" title="dsw.xdic" tooltip="DSW/dsw.xdic" workbook="DefaultEditorWorkbook">
@@ -78,7 +78,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.views.ResourceNavigator" activePerspective="com.tomato.exerd.perspective.design">
+<perspectives activePart="com.tomato.exerd.editor.DiagramEditor" activePerspective="com.tomato.exerd.perspective.design">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.tomato.exerd.perspective.ExerdPerspectiveFactory" id="com.tomato.exerd.perspective.design" label="eXERD"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -181,7 +181,6 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.exerd"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common_ibm2.exerd"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/DSW/common.erdx"/>
@@ -190,54 +189,55 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
 </editors>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common_ibm2.exerd" index="1"/>
+<item historyLabel="common.erdx" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="2"/>
+<item historyLabel="common.erdx" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="2"/>
+<item historyLabel="dsw.xdic" index="2"/>
+<item historyLabel="common.erdx" index="1"/>
+<item historyLabel="dsw.xdic" index="2"/>
+<item historyLabel="common.erdx" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="2"/>
+<item historyLabel="common.erdx" index="1"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="3"/>
-<item historyLabel="common.erdx" index="2"/>
-<item historyLabel="dsw.xdic" index="3"/>
-<item historyLabel="common.erdx" index="2"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="2"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="4">
+<item historyLabel="common.erdx" index="3">
 <position/>
 </item>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="5"/>
+<item historyLabel="common.erdx" index="4"/>
+<item historyLabel="common.exerd" index="0"/>
+<item historyLabel="common.erdx" index="4"/>
+<item historyLabel="common.exerd" index="0"/>
+<item historyLabel="common.erdx" index="4"/>
 <item historyLabel="common.exerd" index="0"/>
 <item historyLabel="common.erdx" index="5"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="5"/>
+<item historyLabel="dsw.xdic" index="6"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="6"/>
+<item historyLabel="dsw.xdic" index="6"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="7"/>
+<item historyLabel="dsw.xdic" index="6"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="7"/>
+<item historyLabel="dsw.xdic" index="6"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="7"/>
+<item historyLabel="dsw.xdic" index="6"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="7"/>
+<item historyLabel="dsw.xdic" index="6"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="7"/>
+<item historyLabel="dsw.xdic" index="6"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="7"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="7"/>
+<item historyLabel="dsw.xdic" index="6"/>
 <item historyLabel="common.exerd" index="0"/>
 <item historyLabel="dsw.xdic" index="7"/>
 <item historyLabel="common.exerd" index="0"/>
 <item historyLabel="dsw.xdic" index="8"/>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="9"/>
+<item historyLabel="dsw.xdic" index="8"/>
+<item historyLabel="common.exerd" index="0"/>
+<item historyLabel="dsw.xdic" index="8"/>
 <item historyLabel="common.exerd" index="0"/>
 <item historyLabel="dsw.xdic" index="9"/>
 <item historyLabel="common.exerd" index="0"/>

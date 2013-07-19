@@ -43,4 +43,5 @@
   <term name="조회" description="조회" physicalName="SEARCH" physicalDescription="Search"/>
   <term name="갱신" description="갱신" physicalName="UPDATE" physicalDescription="Update"/>
   <term name="읽기" description="읽기" physicalName="READ" physicalDescription="Read"/>
+  <term name="깊이" description="깊이" physicalName="DEPTHS" physicalDescription="Depths"/>
 </tm:TermDictionary>

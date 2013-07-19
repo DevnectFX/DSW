@@ -405,6 +405,8 @@
             domain="//@configuration/@domainDefinition/@domain.1/@domain.4"/><columns
             UUID="Column_LidIkOemEeKuFeb9mp7pmQ" logicalName="정렬순서" physicalName="SORT_ORDER"
             domain="//@configuration/@domainDefinition/@domain.0/@domain.1" notNull="TRUE"/><columns
+            UUID="Column_q-Cd0PA6EeKt-ZCbrBeCMw" logicalName="깊이" physicalName="DEPTHS"
+            domain="//@configuration/@domainDefinition/@domain.0/@domain.1" notNull="TRUE"/><columns
             UUID="Column_6DRAUOqDEeKPZ9Bcl_wbpw" logicalName="메뉴경로" physicalName="MENU_PATH"
             domain="//@configuration/@domainDefinition/@domain.1/@domain.6" notNull="FALSE"/><columns
             UUID="Column_UrajoOqEEeKPZ9Bcl_wbpw" logicalName="추가정보" physicalName="EXTRA_INFO"

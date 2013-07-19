@@ -120,6 +120,7 @@ CREATE TABLE MenuInfo (
    , MENU_TXT varchar(32) NOT NULL     -- 메뉴명
    , MENU_DESC_TXT varchar(256)     -- 메뉴설명
    , SORT_ORDER int NOT NULL DEFAULT '0'     -- 정렬순서
+   , DEPTHS int NOT NULL DEFAULT '0'     -- 깊이
    , MENU_PATH varchar(256)     -- 메뉴경로
    , EXTRA_INFO varchar(256)     -- 추가정보
    , USE_YN char(1) NOT NULL DEFAULT 'Y'     -- 사용유무

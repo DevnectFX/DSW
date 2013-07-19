@@ -39,7 +39,7 @@ namespace DSW.Context
         public void Refresh()
         {
             menuList.Clear();
-            menuService.
+            var result = menuService.getMenuList();
 
             isCached = true;
         }
