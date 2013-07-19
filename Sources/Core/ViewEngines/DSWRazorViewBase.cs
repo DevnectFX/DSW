@@ -21,11 +21,20 @@ namespace DSW.ViewEngines.Razor
 
         public DSWRazorViewBase()
         {
-            menu = TinyIoCContainer.Current.Resolve<IMenuContext>();
         }
 
         public override void Initialize(RazorViewEngine engine, Nancy.ViewEngines.IRenderContext renderContext, object model)
         {
+            try
+            {
+                menu = TinyIoCContainer.Current.Resolve<IMenuContext>();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+            }
+
             base.Initialize(engine, renderContext, model);
 
             context = renderContext.Context;
