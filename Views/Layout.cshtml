@@ -1,10 +1,144 @@
-@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
-<html>
-	<head>
-		<title>123</title>
-	</head>
-	<body>
-	!이것은 LayoutView다!! 이건 상위
-	@RenderBody()
-	</body>
+@inherits DSW.ViewEngines.Razor.DSWRazorViewBase<dynamic>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Le styles -->
+    <link href="/common/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+      html,
+      body {
+        height: 100%;
+        /* html과 body 태그는 패딩과 여백을 가지면 안된다. */
+      }
+
+    /* 꼬리말을 아래로 보내기위해 페이지 본문을 감쌈 */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -80px;
+      }
+
+      /* 여기서 꼬리말의 고정높이를 설정 */
+      #push,
+      #footer {
+        height: 80px;
+      }
+
+      @@media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+
+      #wrap > .container {
+        padding-top: 60px;
+      }
+    </style>
+    <link href="/common/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="/common/kendoui.web/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="/common/kendoui.web/styles/kendo.default.min.css" rel="stylesheet" />
+    <script src="/common/jquery/jquery-1.10.2.min.js"></script>
+    <script src="/common/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/common/kendoui.web/js/kendo.all.min.js"></script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/common/bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+    
+    <script>
+    $(document).ready(function()
+    {
+      $("#panelbar").kendoPanelBar({
+          expandMode: "single"
+      });
+    });
+    </script>
+    @RenderSection("body", false)
+  </head>
+
+  <body>
+    <div id="wrap">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">사이트명</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              <a href="#" class="navbar-link">로그인명(아이디명)</a>&nbsp;&nbsp;&nbsp;<a href="#" class="navbar-link"><i class="icon-remove-sign"></i> Logout</a>
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#">시스템관리</a></li>
+              <li><a href="#about">메뉴2</a></li>
+              <li><a href="#contact">메뉴3</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+          <div class="k-content">
+            <ul id="panelbar">
+              <li class="k-state-active"><span class="k-link k-state-selected"><i class="icon-th-list"></i> 메뉴관리</span>
+                <ul>
+                  <li><i class="icon-chevron-right"></i> 메뉴등록관리</li>
+                  <li><i class="icon-chevron-right"></i> 사용자메뉴관리</li>
+                  <li><i class="icon-chevron-right"></i> 그룹메뉴관리</li>
+              </ul>
+              </li>
+              <li><span class="k-link"><i class="icon-th-list"></i> 사용자/그룹관리</span>
+                <ul>
+                  <li><i class="icon-chevron-right"></i> 사용자관리</li>
+                  <li><i class="icon-chevron-right"></i> 그룹관리</li>
+              </ul>
+            </li>
+              <li><span class="k-link"><i class="icon-th-list"></i> 사용자/그룹관리</span>
+                <ul>
+                  <li><i class="icon-chevron-right"></i> 사용자관리</li>
+                  <li><i class="icon-chevron-right"></i> 그룹관리</li>
+              </ul>
+            </li>
+            </ul>
+          </div>
+        </div><!--/span-->
+        <div class="span9">
+          <div class="row">
+          <div class="span12">
+          <div class="row">
+              @RenderBody()
+          </div>
+          </div>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+    </div><!--/.fluid-container-->
+    <div id="push"></div>
+    </div>
+    
+  <div id="footer">
+      <div class="container">
+      <hr />
+      <p>&copy; Company 2013</p>
+    </div>
+  </div>
+  </body>
 </html>

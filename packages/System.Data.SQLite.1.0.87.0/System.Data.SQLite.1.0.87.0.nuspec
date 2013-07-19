@@ -14,9 +14,5 @@
     <copyright>Public Domain</copyright>
     <language>en-US</language>
     <tags>sqlite database ado.net provider interop</tags>
-    <references>
-      <reference file="System.Data.SQLite.dll" />
-      <reference file="System.Data.SQLite.Linq.dll" />
-    </references>
   </metadata>
 </package>

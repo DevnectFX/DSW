@@ -5,36 +5,47 @@ using System.Linq;
 using DSW;
 using DSW.Extention;
 using System.Collections.Generic;
+using Nancy;
+using DSW.Context;
+using DSW.Models;
+using DSW.Core.Context;
+using Nancy.TinyIoc;
 
 
 namespace DSW.ViewEngines.Razor
 {
-	public abstract class DSWRazorViewBase<TModel> : NancyRazorViewBase<TModel>
-	{
-	    public DSWRazorViewBase()
-		{
-		}
+    public abstract class DSWRazorViewBase<TModel> : NancyRazorViewBase<TModel>
+    {
+        private NancyContext context;
+        private IMenuContext menu;
 
-		public override void Initialize(RazorViewEngine engine, Nancy.ViewEngines.IRenderContext renderContext, object model)
-		{
-			base.Initialize(engine, renderContext, model);
-		}
+        public DSWRazorViewBase()
+        {
+            menu = TinyIoCContainer.Current.Resolve<IMenuContext>();
+        }
 
-		private static string GetLayout(IRenderContext renderContext)
-		{
+        public override void Initialize(RazorViewEngine engine, Nancy.ViewEngines.IRenderContext renderContext, object model)
+        {
+            base.Initialize(engine, renderContext, model);
+
+            context = renderContext.Context;
+        }
+
+        private static string GetLayout(IRenderContext renderContext)
+        {
             var viewName = renderContext.Context.NegotiationContext.ViewName;
-			var isPopup = viewName.EndsWith("Popup");
-			var header = viewName.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            var isPopup = viewName.EndsWith("Popup");
+            var header = viewName.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
             string result = "/";
             if (header.Length >= 2)
                 result = "/" + header[0] + "/" + header[0].ToFirstUpper();
-			if (isPopup == true)
-				result += "PopupLayout.cshtml";
-			else
-				result += "Layout.cshtml";
+            if (isPopup == true)
+                result += "PopupLayout.cshtml";
+            else
+                result += "Layout.cshtml";
 
-			return result;
-		}
+            return result;
+        }
 
         public new void ExecuteView(string body, IDictionary<string, string> sectionContents)
         {
@@ -43,10 +54,27 @@ namespace DSW.ViewEngines.Razor
             if (string.IsNullOrEmpty(body) == true)
                 Layout = GetLayout(RenderContext);
         }
-	}
 
-	public abstract class DSWRazorViewBase : DSWRazorViewBase<object>
-	{
-	}
+        public UserInfo User
+        {
+            get {
+                var userIndentity = context.CurrentUser as UserIdentity;
+                if (userIndentity == null)
+                    return null;
+                return userIndentity.UserInfo;
+            }
+        }
+
+        public IMenuContext Menu
+        {
+            get {
+                return menu;
+            }
+        }
+    }
+
+    public abstract class DSWRazorViewBase : DSWRazorViewBase<object>
+    {
+    }
 }
 

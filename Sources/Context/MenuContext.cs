@@ -1,26 +1,47 @@
 ﻿using System;
 using DSW.Core.Context;
+using DSW.Services.Common;
+using System.Collections;
+using System.Collections.Generic;
+using DSW.Models;
 
 
 namespace DSW.Context
 {
-	/// <summary>
-	/// Description of MenuContext.
-	/// </summary>
-	public class MenuContext : IMenuContext
-	{
-        private int id;
+    /// <summary>
+    /// Description of MenuContext.
+    /// </summary>
+    public class MenuContext : IMenuContext
+    {
+        private MenuService menuService;
 
-		public MenuContext()
-		{
-            Console.WriteLine("makeit!");
-            id = new Random().Next();
-		}
+        private bool isCached;
 
-        public int GetId()
+        private IList<MenuInfo> menuList = new List<MenuInfo>();
+
+
+        public MenuContext(MenuService menuService)
         {
-            Console.WriteLine(this.GetHashCode());
-            return id;
+            this.menuService = menuService;
+        }
+
+        public IEnumerable<DSW.Models.MenuInfo> TopMenuList
+        {
+            get
+            {
+                if (isCached == false)
+                    Refresh();
+
+                return null;
+            }
+        }
+
+        public void Refresh()
+        {
+            menuList.Clear();
+            menuService.
+
+            isCached = true;
         }
     }
 }

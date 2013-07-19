@@ -99,27 +99,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Simple.Data.Sqlite">
-      <HintPath>Libs\Simple.Data.Sqlite.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web.Razor.Unofficial">
       <HintPath>packages\System.Web.Razor.Unofficial.2.0.2\lib\net40\System.Web.Razor.Unofficial.dll</HintPath>
     </Reference>
-    <Reference Include="Simple.Data">
-      <HintPath>packages\Simple.Data.Core.0.18.3.1\lib\net40\Simple.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Simple.Data.Ado">
-      <HintPath>packages\Simple.Data.Ado.0.18.3.1\lib\net40\Simple.Data.Ado.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite">
-      <HintPath>packages\System.Data.SQLite.1.0.87.0\lib\net40\System.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.Linq">
-      <HintPath>packages\System.Data.SQLite.1.0.87.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus">
       <HintPath>packages\PdfReport.2.1\lib\EPPlus.dll</HintPath>
@@ -146,13 +131,26 @@
       <HintPath>packages\Nancy.Authentication.Forms.0.18.0\lib\net40\Nancy.Authentication.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Simple.Data, Version=0.18.3.1, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\Simple.Data.Core.0.18.3.1\lib\net40\Simple.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data.Ado, Version=0.18.3.1, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\Simple.Data.Ado.0.18.3.1\lib\net40\Simple.Data.Ado.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.Data.Sqlite">
+      <HintPath>Libs\Simple.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.87.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139">
+      <HintPath>packages\System.Data.SQLite.1.0.87.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.87.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139">
+      <HintPath>packages\System.Data.SQLite.1.0.87.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\Context\MenuContext.cs" />
-    <Compile Include="Sources\Context\SessionContext.cs" />
     <Compile Include="Sources\Core\Context\IMenuContext.cs" />
-    <Compile Include="Sources\Core\Context\ISessionContext.cs" />
     <Compile Include="Sources\Modules\TestModule.cs" />
     <Compile Include="Sources\SelfHostingStartup.cs" />
     <Compile Include="Sources\DSWBoostrapper.cs" />
@@ -162,8 +160,12 @@
     <Compile Include="Sources\Core\Extention\StringExtention.cs" />
     <Compile Include="Sources\Models\UserInfo.cs" />
     <Compile Include="Sources\Core\DSWService.cs" />
-    <Compile Include="Sources\Services\Admin\AdminService.cs" />
-    <Compile Include="Sources\Services\Admin\MenuService.cs" />
+    <Compile Include="Sources\Modules\MainModule.cs" />
+    <Compile Include="Sources\Services\Common\UserService.cs" />
+    <Compile Include="Sources\Context\UserContext.cs" />
+    <Compile Include="Sources\Core\Context\IUserContext.cs" />
+    <Compile Include="Sources\Services\Common\MenuService.cs" />
+    <Compile Include="Sources\Models\MenuInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -183,8 +185,6 @@
     <None Include="Views\Layout.cshtml">
       <LastGenOutput>Layout.cs</LastGenOutput>
     </None>
-    <None Include="x64\SQLite.Interop.dll" />
-    <None Include="x86\SQLite.Interop.dll" />
     <None Include="Views\Admin\AdminLayout.cshtml">
       <LastGenOutput>AdminLayout.cs</LastGenOutput>
     </None>
@@ -202,12 +202,28 @@
       <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
       <DeployService-Deploy>True</DeployService-Deploy>
     </None>
+    <None Include="Views\Login\LoginForm.cshtml">
+      <LastGenOutput>Test2.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Login\LoginLayout.cshtml">
+      <LastGenOutput>Layout.cs</LastGenOutput>
+    </None>
+    <None Include="Views\MainForm.cshtml">
+      <LastGenOutput>Test2.cs</LastGenOutput>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="exports.xml" />
   <Target Name="CopyExportFiles" AfterTargets="Build">
-    <Message Text="Copy Export Files : @(ExportFile->'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
-    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile->'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Message Text="Copy Export Files : @(ExportFile-&gt;'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
+    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile-&gt;'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
   </Target>
   <Target Name="ClearExportFiles" AfterTargets="Clean">
     <Message Text="Remove Export Directory : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
@@ -219,10 +235,14 @@
       <Properties>
         <Policies>
           <TextStylePolicy FileWidth="120" TabWidth="2" IndentWidth="2" inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-cshtml" />
-          <TextStylePolicy FileWidth="120" TabsToSpaces="False" inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
-          <CSharpFormattingPolicy ElseIfNewLinePlacement="SameLine" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" BeforeIndexerDeclarationBracket="False" BeforeDelegateDeclarationParentheses="False" AfterDelegateDeclarationParameterComma="True" NewParentheses="False" SpacesBeforeBrackets="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
+          <TextStylePolicy FileWidth="120" inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
+          <CSharpFormattingPolicy PropertyBraceStyle="NextLine" PropertyGetBraceStyle="NextLine" PropertySetBraceStyle="NextLine" EventBraceStyle="NextLine" EventAddBraceStyle="NextLine" EventRemoveBraceStyle="NextLine" StatementBraceStyle="NextLine" ElseIfNewLinePlacement="SameLine" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" BeforeIndexerDeclarationBracket="False" BeforeDelegateDeclarationParentheses="False" AfterDelegateDeclarationParameterComma="True" NewParentheses="False" SpacesBeforeBrackets="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
         </Policies>
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Sources\Services\Admin\" />
+  </ItemGroup>
 </Project>

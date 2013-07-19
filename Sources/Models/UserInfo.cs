@@ -4,41 +4,31 @@ using Nancy.Security;
 
 namespace DSW.Models
 {
-	/// <summary>
-	/// 사용자 정보
-	/// </summary>
-	public class UserInfo : IUserIdentity
-	{
-		/// <summary>
-		/// 사용자 아이디
-		/// </summary>
-		/// <value>사용자 아이디</value>
-		public string UserId { get; set; }
-		/// <summary>
-		/// 사용자 명
-		/// </summary>
-		/// <value>사용자 명</value>
-		public string Name { get; set; }
-		/// <summary>
-		/// 삭제 유무
-		/// </summary>
-		/// <value>삭제 유무</value>
-		public string DelYn { get; set; }
-		/// <summary>
-		/// 그룹 아이디
-		/// </summary>
-		/// <value>그룹 아이디</value>
-		public string GroupId { get; set; }
-
-		
-		public string UserName {
-			get
-			{
-				return Name;
-			}
-		}
-		
-		public IEnumerable<string> Claims { get; set; }
-	}
+    /// <summary>
+    /// 사용자 정보
+    /// </summary>
+    public class UserInfo
+    {
+        /// <summary>
+        /// 사용자 아이디
+        /// </summary>
+        /// <value>사용자 아이디</value>
+        public string UserId { get; set; }
+        /// <summary>
+        /// 사용자 명
+        /// </summary>
+        /// <value>사용자 명</value>
+        public string Name { get; set; }
+        /// <summary>
+        /// 삭제 유무
+        /// </summary>
+        /// <value>삭제 유무</value>
+        public string DelYn { get; set; }
+        /// <summary>
+        /// 그룹 아이디
+        /// </summary>
+        /// <value>그룹 아이디</value>
+        public string GroupId { get; set; }
+    }
 }
 
