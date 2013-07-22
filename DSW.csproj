@@ -215,7 +215,7 @@
       <LastGenOutput>Test2.cs</LastGenOutput>
     </None>
     <None Include="Views\User\UserRegistForm.cshtml" />
-    <None Include="Views\User\UserRegistLayout.cshtml" />
+    <None Include="Views\User\UserLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="x64\SQLite.Interop.dll">

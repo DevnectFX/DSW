@@ -10,9 +10,9 @@ namespace DSW.Modules
     public class UserModule : DSWModule
     {
         public UserModule()
-            : base("/")
+            : base("/user")
         {
-            Get["/user/regist"] = _ => View["/User/UserRegistForm"];
+            Get["/regist"] = _ => View["User/UserRegistForm"];
         }
     }
 }
