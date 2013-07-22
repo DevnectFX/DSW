@@ -12,7 +12,13 @@ namespace DSW.Modules
         public UserModule()
             : base("/user")
         {
+            Get["/list"] = _ => UserList();
             Get["/regist"] = _ => View["User/UserRegistForm"];
+        }
+
+        private dynamic UserList()
+        {
+            return View["User/UserList"];
         }
     }
 }

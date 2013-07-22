@@ -216,6 +216,7 @@
     </None>
     <None Include="Views\User\UserRegistForm.cshtml" />
     <None Include="Views\User\UserLayout.cshtml" />
+    <None Include="Views\User\UserList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="x64\SQLite.Interop.dll">
