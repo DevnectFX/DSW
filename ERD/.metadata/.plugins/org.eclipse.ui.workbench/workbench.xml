@@ -32,7 +32,7 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="W:/DevnectFX/DSW/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" path="D:/DEVNECT/DevnectFX/DSW/ERD/DSW/common.exerd" title="common.exerd" tooltip="DSW/common.exerd" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DSW/common.exerd"/>
 </editor>
 <editor id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" partName="dsw.xdic" path="W:/DevnectFX/DSW/ERD/DSW/dsw.xdic" title="dsw.xdic" tooltip="DSW/dsw.xdic" workbook="DefaultEditorWorkbook">
