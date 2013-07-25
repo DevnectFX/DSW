@@ -16,8 +16,8 @@ namespace DSW.ViewEngines.Razor
 {
     public abstract class DSWRazorViewBase<TModel> : NancyRazorViewBase<TModel>
     {
-        private NancyContext context;
-        private IMenuContext menu;
+        // 싱글톤 인스턴스이기 때문에 한번만 Resolve한 후 재사용하도록 한다.
+        private static IMenuContext menu = TinyIoCContainer.Current.Resolve<IMenuContext>();
 
         public DSWRazorViewBase()
         {
@@ -25,19 +25,7 @@ namespace DSW.ViewEngines.Razor
 
         public override void Initialize(RazorViewEngine engine, Nancy.ViewEngines.IRenderContext renderContext, object model)
         {
-            try
-            {
-                menu = TinyIoCContainer.Current.Resolve<IMenuContext>();
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.StackTrace);
-            }
-
             base.Initialize(engine, renderContext, model);
-
-            context = renderContext.Context;
         }
 
         private static string GetLayout(IRenderContext renderContext)
@@ -67,7 +55,7 @@ namespace DSW.ViewEngines.Razor
         public UserInfo User
         {
             get {
-                var userIndentity = context.CurrentUser as UserIdentity;
+                var userIndentity = RenderContext.Context.CurrentUser as UserIdentity;
                 if (userIndentity == null)
                     return null;
                 return userIndentity.UserInfo;

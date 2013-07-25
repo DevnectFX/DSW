@@ -19,7 +19,7 @@ namespace DSW.Context
 
 
         private Dictionary<Guid, UserIdentity> map = new Dictionary<Guid, UserIdentity>();
-        private object mapLock = new object();
+        private ReaderWriterLockSlim mapLock = new ReaderWriterLockSlim();
 
 
         public UserContext(UserService userService)
@@ -29,13 +29,18 @@ namespace DSW.Context
         
         public IUserIdentity GetUserFromIdentifier(Guid identifier, Nancy.NancyContext context)
         {
-            lock (mapLock)
+            mapLock.EnterReadLock();
+            try
             {
                 var result = map.ContainsKey(identifier);
                 if (result == false)
                     return null;
 
                 return map[identifier];
+            }
+            finally
+            {
+                mapLock.ExitReadLock();
             }
         }
 
@@ -44,7 +49,7 @@ namespace DSW.Context
         public Guid? Login(string id, string passwd)
         {
             var userInfo = userService.GetUserInfo(id, passwd);
-            if (id == "admin" && passwd == "10293847")
+            if (id == "admin" && passwd == "admin1234")
                 userInfo = GetAdminInfo();
 
             if (userInfo == null)
@@ -52,9 +57,15 @@ namespace DSW.Context
 
             var guid = Guid.NewGuid();
             var userIdentity = new UserIdentity(guid, userInfo);
-            lock (mapLock)
+
+            mapLock.EnterWriteLock();
+            try
             {
                 map[guid] = userIdentity;
+            }
+            finally
+            {
+                mapLock.ExitWriteLock();
             }
 
             return guid;
@@ -67,9 +78,15 @@ namespace DSW.Context
                 return;
 
             var guid = userIdentity.Identifier;
-            lock (mapLock)
+
+            mapLock.EnterWriteLock();
+            try
             {
                 map.Remove(guid);
+            }
+            finally
+            {
+                mapLock.ExitWriteLock();
             }
         }
 

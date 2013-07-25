@@ -41,6 +41,15 @@ namespace DSW.Sources
             
             container.Register<IUserContext, UserContext>();            // 세션 Context
         }
+
+        /// <summary>
+        /// TinyIoC 컨테이너를 다른곳에서도 이용하기 위해 GetApplicationContainer 메소드를 대치한다.
+        /// </summary>
+        /// <returns>The application container.</returns>
+        protected override Nancy.TinyIoc.TinyIoCContainer GetApplicationContainer()
+        {
+            return Nancy.TinyIoc.TinyIoCContainer.Current;
+        }
         
         protected override void ConfigureRequestContainer(Nancy.TinyIoc.TinyIoCContainer container, NancyContext context)
         {
