@@ -12,19 +12,18 @@ namespace DSW.Modules
 {
     public class AdminModule : DSWModule
     {    
-        public AdminModule(IMenuContext menuContext, 
-                           MenuService menu)
-            : base("/admin", menuContext)
+        public AdminModule()
+            : base("/admin")
         {
             this.RequiresAuthentication();                        // 인증을 해야 접근 가능하도록 등록
             
             Get["/"]        = _ => View["Admin/Default"];
-            Get["/menu"]    = _ => Menu(menu);
+            Get["/menu"]    = _ => Menu();
         }
         
-        private dynamic Menu(MenuService menu)
+        private dynamic Menu()
         {
-            var model = "!" + menu + ", " + MenuContext + ", " ; //menu.GetTopMenuList();
+            var model = "!" + MenuContext + ", " ; //menu.GetTopMenuList();
             
             return View["Admin/Menu", model];
         }
