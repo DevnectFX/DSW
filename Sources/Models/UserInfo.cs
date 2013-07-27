@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using Nancy.Security;
+using DSW.Core;
 
 namespace DSW.Models
 {
     /// <summary>
     /// 사용자 정보
     /// </summary>
-    public class UserInfo
+    public class UserInfo : Model
     {
         /// <summary>
         /// 사용자 아이디

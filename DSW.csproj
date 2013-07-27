@@ -151,6 +151,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\Context\MenuContext.cs" />
     <Compile Include="Sources\Core\Context\IMenuContext.cs" />
+    <Compile Include="Sources\Core\Model.cs" />
     <Compile Include="Sources\Modules\TestModule.cs" />
     <Compile Include="Sources\SelfHostingStartup.cs" />
     <Compile Include="Sources\DSWBoostrapper.cs" />
@@ -229,14 +230,16 @@
   </ItemGroup>
   <Import Project="exports.xml" />
   <Target Name="CopyExportFiles" AfterTargets="Build">
-    <Message Text="Copy Export Files : @(ExportFile-&gt;'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
-    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile-&gt;'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Message Text="Copy Export Files : @(ExportFile->'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
+    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile->'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
   </Target>
   <Target Name="ClearExportFiles" AfterTargets="Clean">
     <Message Text="Remove Export Directory : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
     <RemoveDir Directories="$(TargetDir)%(ExportFile.PrefixPath)" />
   </Target>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Sources\Services\Admin\" />
+  </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
@@ -249,8 +252,5 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup />
-  <ItemGroup>
-    <Folder Include="Sources\Services\Admin\" />
-    <Folder Include="Views\User\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

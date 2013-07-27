@@ -3,6 +3,7 @@ using DSW.Core.Context;
 using DSW.Services.Common;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DSW.Models;
 
 
@@ -17,7 +18,8 @@ namespace DSW.Context
 
         private bool isCached;
 
-        private IList<MenuInfo> menuList = new List<MenuInfo>();
+        private IList<MenuInfo> topMenuList = new List<MenuInfo>();
+        private object topMenuListLock = new object();
 
 
         public MenuContext(MenuService menuService)
@@ -25,23 +27,64 @@ namespace DSW.Context
             this.menuService = menuService;
         }
 
-        public IEnumerable<DSW.Models.MenuInfo> TopMenuList
+        public IEnumerable<MenuInfo> TopMenuList
         {
             get
             {
-                if (isCached == false)
-                    Refresh();
-
-                return null;
+                DoCache();
+                return topMenuList;
             }
+        }
+
+        public void DoCache()
+        {
+            if (isCached == true)
+                return;
+
+            lock (topMenuListLock)
+            {
+                if (isCached == true)
+                    return;
+
+                var newTopMenuList = new List<MenuInfo>();
+                var result = menuService.getMenuList();
+                foreach (var menu in result)
+                {
+                    MenuInfo m = menu;
+                    m.ParentMenu = FindMenu(newTopMenuList, m.ParentMenuId);
+                    // 최상위 메뉴면 최상위메뉴목록에 등록한다.
+                    if (m.ParentMenu == null)
+                        newTopMenuList.Add(m);
+                }
+
+                isCached = true;
+                topMenuList = newTopMenuList;
+            }
+        }
+
+        private static MenuInfo FindMenu(IEnumerable<MenuInfo> list, string menuId)
+        {
+            // 차후 LINQ를 이용해 탐색하는 코드로 변경해보자.
+            //return topMenuList.FirstOrDefault(
+            //    m => m.MenuId == menuId
+            //    );
+            foreach (var menu in list)
+            {
+                if (menu.MenuId == menuId)
+                    return menu;
+
+                var result = FindMenu(menu.ChildMenuList, menuId);
+                if (result != null)
+                    return result;
+            }
+
+            return null;
         }
 
         public void Refresh()
         {
-            menuList.Clear();
-            var result = menuService.getMenuList();
-
-            isCached = true;
+            lock (topMenuListLock)
+                isCached = false;
         }
     }
 }

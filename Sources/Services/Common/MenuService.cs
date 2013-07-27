@@ -14,8 +14,10 @@ namespace DSW.Services.Common
 
         public dynamic getMenuList()
         {
-            //DB.MenuInfo.FindAllBy(UseYn: "Y").OrderBy(DB.MenuInfo.
-            return null;
+            var result = DB.MenuInfo.FindAllByUseYn("Y")
+                    .OrderByDepths()
+                    .ThenBySortOrder();
+            return result;
         }
     }
 }
