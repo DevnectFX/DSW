@@ -169,6 +169,7 @@
     <Compile Include="Sources\Services\Common\MenuService.cs" />
     <Compile Include="Sources\Models\MenuInfo.cs" />
     <Compile Include="Sources\Modules\UserModule.cs" />
+    <Compile Include="Sources\Services\User\UserService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -251,5 +252,6 @@
   <ItemGroup>
     <Folder Include="Sources\Services\Admin\" />
     <Folder Include="Views\User\" />
+    <Folder Include="Sources\Services\User\" />
   </ItemGroup>
 </Project>
