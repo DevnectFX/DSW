@@ -1,8 +1,13 @@
 @inherits DSW.ViewEngines.Razor.DSWRazorViewBase<dynamic>
 <div class="container">
-<div class="row">
-<div class="span12">
-테스트 사용자 등록페이지
-</div>
-</div>
+  <form method="post" action="/user/regist">
+	<div id="" class="k-content">
+		<h3>사용자 등록</h3>
+        <label for="userId">아이디</label><span class="">*</span>
+        <input type="text" id="userId" /><br />
+        <label for="name">이름</label><span class="">*</span>
+        <input type="text" id="name" /><br />
+        <input type="submit" value="등록"/>
+	</div>
+  </form>
 </div>

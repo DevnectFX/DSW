@@ -13,12 +13,18 @@ namespace DSW.Modules
 {
     public class UserModule : DSWModule
     {
+        private UserService service;
+
+
         public UserModule()
             : base("/user")
         {
+            service = new UserService();
+
             Get["/list"] = _ => UserList();
             Post["/list"] = _ => GetUserList();
             Get["/regist"] = _ => View["User/UserRegistForm"];
+            Post["/regist"] = _ => RegistUserInfo();
         }
 
         private dynamic UserList()
@@ -38,7 +44,7 @@ namespace DSW.Modules
  //           uList.Add(new UserInfo() { Name = "ABC", UserId = "123", GroupId = "DEPT1", DelYn = "Y" });
   //          uList.Add(new UserInfo() { Name = "DEF", UserId = "567", GroupId = "DEPT2", DelYn = "Y" });
 
-            var uList = new UserService().GetUserList();
+            var uList = service.GetUserList();
 
             foreach (var item in uList)
             {
@@ -48,6 +54,15 @@ namespace DSW.Modules
             this.BindTo(uList);
 
             return Response.AsJson(uList, HttpStatusCode.OK);
+        }
+
+        private dynamic RegistUserInfo()
+        {
+            var form = Context.Request.Form;
+            Console.WriteLine("TEST : {0}", form.userId.ToString());
+            var registed = service.RegistUserInfo(new UserInfo() { UserId = form.userId, Name = form.name, DelYn = "Y", GroupId = null });
+
+            return null;
         }
     }
 }

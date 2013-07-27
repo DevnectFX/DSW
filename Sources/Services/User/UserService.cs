@@ -20,6 +20,13 @@ namespace DSW.User
 
             return list.Cast<UserInfo>();
         }
+
+        public bool RegistUserInfo(UserInfo userInfo)
+        {
+            var user = DB.UserInfo.Insert(userInfo);
+
+            return true;
+        }
     }
 }
 
