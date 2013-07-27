@@ -250,7 +250,9 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Sources\Services\Admin\" />
+    <Folder Include="Views\User\" />
     <Folder Include="Sources\Services\User\" />
   </ItemGroup>
 </Project>
