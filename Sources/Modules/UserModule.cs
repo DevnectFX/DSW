@@ -11,7 +11,7 @@ using DSW.User;
 
 namespace DSW.Modules
 {
-    public class UserModule : DSWModuleㅌ
+    public class UserModule : DSWModule
     {
         public UserModule()
             : base("/user")
