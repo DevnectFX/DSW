@@ -170,8 +170,7 @@
     <Compile Include="Sources\Services\Common\MenuService.cs" />
     <Compile Include="Sources\Models\MenuInfo.cs" />
     <Compile Include="Sources\Modules\UserModule.cs" />
-    <Compile Include="Sources\Core\Context\IContext.cs" />
-  </ItemGroup>
+    <Compile Include="Sources\Services\User\UserService.cs" />    <Compile Include="Sources\Core\Context\IContext.cs" />  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="Views\Test\Test.cshtml">
@@ -252,5 +251,6 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup />
-  <ItemGroup />
+    <Folder Include="Sources\Services\User\" />
+  </ItemGroup>
 </Project>
