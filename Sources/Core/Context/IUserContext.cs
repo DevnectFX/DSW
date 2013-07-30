@@ -1,18 +1,11 @@
-﻿using System;
-using Nancy.Authentication.Forms;
+using System;
 using DSW.Models;
-using Nancy;
-using DSW.Context;
 
-
-namespace DSW.Core.Context
+namespace DSW.Context
 {
-    /// <summary>
-    /// Description of ISessionContext.
-    /// </summary>
-    public interface IUserContext : IContext, IUserMapper
+    public interface IUserContext
     {
-        Guid? Login(string id, string passwd);
-        void Logout(NancyContext context);
+        UserInfo UserInfo { get; }
     }
 }
+

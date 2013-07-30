@@ -19,6 +19,7 @@ namespace DSW.Context
         private bool isCached;
 
         private IList<MenuInfo> topMenuList = new List<MenuInfo>();
+        private IDictionary<string, MenuInfo> menuMap = new Dictionary<string, MenuInfo>();
         private object topMenuListLock = new object();
 
 
@@ -47,6 +48,7 @@ namespace DSW.Context
                     return;
 
                 var newTopMenuList = new List<MenuInfo>();
+                var newMenuMap = new Dictionary<string, MenuInfo>();
                 var result = menuService.getMenuList();
                 foreach (var menu in result)
                 {
@@ -55,10 +57,13 @@ namespace DSW.Context
                     // 최상위 메뉴면 최상위메뉴목록에 등록한다.
                     if (m.ParentMenu == null)
                         newTopMenuList.Add(m);
+
+                    newMenuMap[m.MenuId] = m;
                 }
 
                 isCached = true;
                 topMenuList = newTopMenuList;
+                menuMap = newMenuMap;
             }
         }
 
@@ -79,6 +84,16 @@ namespace DSW.Context
             }
 
             return null;
+        }
+
+        public MenuInfo FindMenu(string menuId)
+        {
+            MenuInfo menu;
+            var result = menuMap.TryGetValue(menuId, out menu);
+            if (result == false)
+                return null;
+
+            return menu;
         }
 
         public void Refresh()

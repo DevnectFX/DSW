@@ -84,9 +84,11 @@
               <a href="#" class="navbar-link">@User.Name (@User.UserId)</a>&nbsp;&nbsp;&nbsp;<a href="/logout" class="navbar-link"><i class="icon-remove-sign"></i> Logout</a>
             </p>
             <ul class="nav">
-              <li class="active"><a href="#">시스템관리</a></li>
-              <li><a href="#about">메뉴2</a></li>
-              <li><a href="#contact">@Menu.TopMenuList</a></li>
+              @foreach(var menu in @Menu.TopMenuList)
+              {
+                <li><a href="#">@menu.MenuTxt</a></li>
+              }
+              <!--<li class="active"><a href="#">시스템관리</a></li>-->
             </ul>
           </div><!--/.nav-collapse -->
         </div>

@@ -30,6 +30,12 @@ namespace DSW.Models
         /// </summary>
         /// <value>그룹 아이디</value>
         public string GroupId { get; set; }
+
+        /// <summary>
+        /// 선택된 메뉴의 메뉴아이디
+        /// </summary>
+        /// <value>The selected menu identifier.</value>
+        public string SelectedMenuId { get; set; }
     }
 }
 

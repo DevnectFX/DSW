@@ -58,7 +58,7 @@ namespace DSW.ViewEngines.Razor
                 var userIndentity = RenderContext.Context.CurrentUser as UserIdentity;
                 if (userIndentity == null)
                     return null;
-                return userIndentity.UserInfo;
+                return userIndentity.UserContext.UserInfo;
             }
         }
 

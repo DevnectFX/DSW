@@ -30,7 +30,7 @@ namespace DSW.Sources
                 new FormsAuthenticationConfiguration()
             {
                 RedirectUrl = "~/login",
-                UserMapper = container.Resolve<IUserContext>(),
+                UserMapper = container.Resolve<ILoginContext>(),
             };
             FormsAuthentication.Enable(pipelines, formsAuthConfiguration);
         }
@@ -39,7 +39,7 @@ namespace DSW.Sources
         {
             base.ConfigureApplicationContainer(container);
             
-            container.Register<IUserContext, UserContext>();            // 세션 Context
+            container.Register<ILoginContext, LoginContext>();            // 세션 Context
         }
 
         /// <summary>

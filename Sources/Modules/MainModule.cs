@@ -11,7 +11,7 @@ namespace DSW.Modules
 {
     public class MainModule : DSWModule
     {
-        public MainModule(IUserContext userContext)
+        public MainModule(ILoginContext userContext)
             : base("/")
         {
             Post["/"]        = _ => MainForm();
@@ -31,7 +31,7 @@ namespace DSW.Modules
             return View["Login/LoginForm", form];
         }
 
-        private dynamic LoginProcess(IUserContext userContext)
+        private dynamic LoginProcess(ILoginContext userContext)
         {
             var form = Context.Request.Form;
             var id = form.Id;
@@ -52,7 +52,7 @@ namespace DSW.Modules
             return this.LoginAndRedirect(guid.Value, expiry);
         }
 
-        private dynamic LogoutProcess(IUserContext userContext)
+        private dynamic LogoutProcess(ILoginContext userContext)
         {
             userContext.Logout(Context);
             return this.LogoutAndRedirect("/");
