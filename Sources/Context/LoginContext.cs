@@ -15,15 +15,16 @@ namespace DSW.Context
     /// </summary>
     public class LoginContext : ILoginContext
     {
+        private IMenuContext menuContext;
         private UserService userService;
-
 
         private Dictionary<Guid, UserIdentity> map = new Dictionary<Guid, UserIdentity>();
         private ReaderWriterLockSlim mapLock = new ReaderWriterLockSlim();
 
 
-        public LoginContext(UserService userService)
+        public LoginContext(IMenuContext menuContext, UserService userService)
         {
+            this.menuContext = menuContext;
             this.userService = userService;
         }
         
@@ -57,7 +58,7 @@ namespace DSW.Context
 
             var guid = Guid.NewGuid();
             var newUserService = new UserService(); // TODO: UserService의 생성인자가 변경되면 수정하여야 함
-            var userIdentity = new UserIdentity(guid, newUserService, userInfo);
+            var userIdentity = new UserIdentity(guid, menuContext, newUserService, userInfo);
 
             mapLock.EnterWriteLock();
             try
@@ -121,10 +122,10 @@ namespace DSW.Context
         }
         public UserContext UserContext { get; set; }
 
-        public UserIdentity(Guid identifier, UserService userService, UserInfo userInfo)
+        public UserIdentity(Guid identifier, IMenuContext menuContext, UserService userService, UserInfo userInfo)
         {
             this.Identifier = identifier;
-            this.UserContext = new UserContext(userService, userInfo);
+            this.UserContext = new UserContext(menuContext, userService, userInfo);
             this.userName = userInfo.UserId;
         }
     }

@@ -16,9 +16,6 @@ namespace DSW.ViewEngines.Razor
 {
     public abstract class DSWRazorViewBase<TModel> : NancyRazorViewBase<TModel>
     {
-        // 싱글톤 인스턴스이기 때문에 한번만 Resolve한 후 재사용하도록 한다.
-        private static IMenuContext menu = TinyIoCContainer.Current.Resolve<IMenuContext>();
-
         public DSWRazorViewBase()
         {
         }
@@ -55,17 +52,26 @@ namespace DSW.ViewEngines.Razor
         public UserInfo User
         {
             get {
-                var userIndentity = RenderContext.Context.CurrentUser as UserIdentity;
-                if (userIndentity == null)
+                if (UserIdentity == null)
                     return null;
-                return userIndentity.UserContext.UserInfo;
+                return UserIdentity.UserContext.UserInfo;
             }
         }
 
         public IMenuContext Menu
         {
             get {
-                return menu;
+                if (UserIdentity == null)
+                    return null;
+                return UserIdentity.UserContext.Menu;
+            }
+        }
+
+        public UserIdentity UserIdentity
+        {
+            get
+            {
+                return RenderContext.Context.CurrentUser as UserIdentity;
             }
         }
     }

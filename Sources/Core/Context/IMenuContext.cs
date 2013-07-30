@@ -12,5 +12,7 @@ namespace DSW.Core.Context
     public interface IMenuContext : IContext
     {
         IEnumerable<MenuInfo> TopMenuList { get; }
+        MenuInfo SelectMenuOrDefault(MenuInfo topMenu);
+        MenuInfo SelectMenuOrDefault(string menuId);
     }
 }

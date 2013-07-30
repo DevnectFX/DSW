@@ -9,8 +9,6 @@ namespace DSW
     public abstract class DSWModule : NancyModule
     {
         private IMenuContext menuContext;
-        private object menuContextLock = new object();
-
 
         public DSWModule(string modulePath)
             : base(modulePath)

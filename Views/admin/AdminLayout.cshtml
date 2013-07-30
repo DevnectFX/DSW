@@ -86,7 +86,7 @@
             <ul class="nav">
               @foreach(var menu in @Menu.TopMenuList)
               {
-                <li><a href="#">@menu.MenuTxt</a></li>
+                <li><a href="@Menu.SelectDefaultMenu(menu).MenuPath">@menu.MenuTxt</a></li>
               }
               <!--<li class="active"><a href="#">시스템관리</a></li>-->
             </ul>

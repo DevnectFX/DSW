@@ -70,9 +70,6 @@ namespace DSW.Context
         private static MenuInfo FindMenu(IEnumerable<MenuInfo> list, string menuId)
         {
             // 차후 LINQ를 이용해 탐색하는 코드로 변경해보자.
-            //return topMenuList.FirstOrDefault(
-            //    m => m.MenuId == menuId
-            //    );
             foreach (var menu in list)
             {
                 if (menu.MenuId == menuId)
@@ -94,6 +91,37 @@ namespace DSW.Context
                 return null;
 
             return menu;
+        }
+
+        /// <summary>
+        /// 상위 메뉴를 선택했을 때, 메뉴경로가 없으면 하위 메뉴 중 기본 메뉴를 선택해 반환한다.
+        /// </summary>
+        /// <returns></returns>
+        /// <param name="topMenu">상위메뉴</param>
+        public MenuInfo SelectMenuOrDefault(MenuInfo topMenu)
+        {
+            var selMenu = topMenu;
+            if (string.IsNullOrWhiteSpace(selMenu.MenuPath) == false)
+            {
+                return selMenu;
+            }
+            foreach (var menu in topMenu.ChildMenuList)
+            {
+                selMenu = SelectMenuOrDefault(menu);
+                if (selMenu != menu)
+                    return selMenu;
+            }
+
+            // 아무것도 선택할 수 없으므로 상위메뉴를 그대로 반환한다.
+            return topMenu;
+        }
+
+        public MenuInfo SelectMenuOrDefault(string menuId)
+        {
+            var menu = FindMenu(menuId);
+            if (menu == null)
+                return null;
+            return SelectMenuOrDefault(menu);
         }
 
         public void Refresh()
