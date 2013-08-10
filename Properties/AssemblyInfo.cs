@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("DSW")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("DEVNECT Co,.Ltd")]
 [assembly: AssemblyProduct("")]
 [assembly: AssemblyCopyright("spowner")]
 [assembly: AssemblyTrademark("")]
