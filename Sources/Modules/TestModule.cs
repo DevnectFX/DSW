@@ -12,7 +12,7 @@ namespace DSW.Modules
 
 
         public TestModule(IMenuContext menuContext)
-            : base("/")
+            : base("/test")
         {
             this.menuContext = menuContext;
 
@@ -27,6 +27,10 @@ namespace DSW.Modules
             Get["/abc"] = _ => {
                 return View["Test2"];
             };
+
+            Get["/ua"] = _ => {
+                Console.WriteLine(Request.Headers.UserAgent);
+                return Request.Headers.UserAgent; };
         }
     }
 }
