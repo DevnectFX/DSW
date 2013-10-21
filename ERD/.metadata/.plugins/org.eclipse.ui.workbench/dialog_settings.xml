@@ -11,4 +11,6 @@
 			<item value="com.tomato.exerd.ui.newWizards.category"/>
 		</list>
 	</section>
+	<section name="ImportExportAction">
+	</section>
 </section>
