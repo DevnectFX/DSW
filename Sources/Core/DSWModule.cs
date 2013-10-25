@@ -1,8 +1,12 @@
 using System;
-using Nancy;
-using DSW.Core.Context;
 using System.Collections.Generic;
+
+using Nancy;
+using Nancy.ModelBinding;
+
+using DSW.Core.Context;
 using DSW.Context;
+
 
 namespace DSW
 {
@@ -10,7 +14,7 @@ namespace DSW
     {
         private IMenuContext menuContext;
 
-        public DSWModule(string modulePath)
+        protected DSWModule(string modulePath)
             : base(modulePath)
         {
         }
