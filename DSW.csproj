@@ -154,7 +154,7 @@
     <Compile Include="Sources\Core\Model.cs" />
     <Compile Include="Sources\Modules\TestModule.cs" />
     <Compile Include="Sources\SelfHostingStartup.cs" />
-    <Compile Include="Sources\DSWBoostrapper.cs" />
+    <Compile Include="Sources\DSWBootstrapper.cs" />
     <Compile Include="Sources\Core\ViewEngines\DSWRazorViewBase.cs" />
     <Compile Include="Sources\Modules\AdminModule.cs" />
     <Compile Include="Sources\Core\DSWModule.cs" />
@@ -221,8 +221,8 @@
       <LastGenOutput>Test2.cs</LastGenOutput>
     </None>
     <None Include="Views\User\UserRegistForm.cshtml" />
-    <None Include="Views\User\UserLayout.cshtml" />
-    <None Include="Views\User\UserList.cshtml" />
+    <None Include="Views\User\UserLayout_.cshtml" />
+    <None Include="Views\User\UserList_.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="x64\SQLite.Interop.dll">
@@ -234,8 +234,8 @@
   </ItemGroup>
   <Import Project="exports.xml" />
   <Target Name="CopyExportFiles" AfterTargets="Build">
-    <Message Text="Copy Export Files : @(ExportFile-&gt;'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
-    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile-&gt;'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Message Text="Copy Export Files : @(ExportFile->'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
+    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile->'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
   </Target>
   <Target Name="ClearExportFiles" AfterTargets="Clean">
     <Message Text="Remove Export Directory : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
@@ -256,8 +256,5 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
-  <ItemGroup>
-    <Folder Include="Views\User\" />
-    <Folder Include="Sources\Services\User\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
