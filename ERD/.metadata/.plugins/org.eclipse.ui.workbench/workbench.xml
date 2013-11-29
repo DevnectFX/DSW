@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="14" version="2.0">
+<workbench progressCount="7" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="345" y="179">
+<window height="768" maximized="true" width="1024" x="234" y="234">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -13,7 +13,6 @@
 <coolItem id="com.tomato.devkit.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="53" y="22"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
@@ -27,12 +26,16 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" title="common.exerd" tooltip="W:\DevnectFX\DSW\ERD\DSW\common.exerd" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/W:/DevnectFX/DSW/ERD/DSW/common.exerd"/>
+<editor id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" partName="common.exerd" title="common.exerd" tooltip="W:\Projects\DevnectFX\DSW\ERD\DSW\common.exerd" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/W:/Projects/DevnectFX/DSW/ERD/DSW/common.exerd"/>
+</editor>
+<editor activePart="true" focus="true" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" partName="dsw.xdic" title="dsw.xdic" tooltip="W:\Projects\DevnectFX\DSW\ERD\DSW\dsw.xdic" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/W:/Projects/DevnectFX/DSW/ERD/DSW/dsw.xdic"/>
 </editor>
 </editors>
 <views>
@@ -46,26 +49,20 @@
 </filters>
 </viewState>
 </view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="콘솔">
-<viewState/>
-</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="콘솔"/>
 <view id="org.eclipse.gef.ui.palette_view" partName="Palette">
 <viewState/>
 </view>
 <view id="com.tomato.exerd.ui.views.domain" partName="Domain">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인">
-<viewState/>
-</view>
+<view id="com.tomato.exerd.validate.ui.ValidateView" partName="검토"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="아웃라인"/>
 <view id="com.tomato.exerd.ui.views.thumbnail" partName="Thumbnail">
 <viewState/>
 </view>
-<view id="com.tomato.exerd.validate.ui.ValidateView" partName="검토">
-<viewState/>
-</view>
 </views>
-<perspectives activePart="com.tomato.exerd.editor.DiagramEditor" activePerspective="com.tomato.exerd.perspective.design">
+<perspectives activePart="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" activePerspective="com.tomato.exerd.perspective.design">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.tomato.exerd.perspective.ExerdPerspectiveFactory" id="com.tomato.exerd.perspective.design" label="eXERD"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -110,15 +107,16 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="leftFolder">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@b925" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="leftFolder">
 <folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.17991632" ratioLeft="344" ratioRight="1568" relationship="2" relative="leftFolder"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1534c53" ratio="0.77997446" ratioLeft="1223" ratioRight="345" relationship="2" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.18" ratioLeft="180" ratioRight="820" relationship="2" relative="leftFolder"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@5fbbf3" ratio="0.77926826" ratioLeft="639" ratioRight="181" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.tomato.exerd.ui.views.thumbnail" appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.thumbnail" label="Thumbnail"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -126,7 +124,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="rightFolder" ratio="0.24946466" ratioLeft="233" ratioRight="701" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1534c53">
+<info folder="true" part="rightFolder" ratio="0.249226" ratioLeft="161" ratioRight="485" relationship="4" relative="org.eclipse.ui.internal.ViewStack@5fbbf3">
 <folder activePageID="com.tomato.exerd.modelview3.ModelView3" appearance="2" expanded="2">
 <page content="com.tomato.exerd.modelview3.ModelView3" label="모델"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="아웃라인"/>
@@ -136,7 +134,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottomFolder" ratio="0.69914347" ratioLeft="653" ratioRight="281" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottomFolder" ratio="0.6996904" ratioLeft="452" ratioRight="194" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.tomato.exerd.ui.views.domain" appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.domain" label="Domain"/>
 <page content="com.tomato.exerd.validate.ui.ValidateView" label="검토"/>
@@ -149,7 +147,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1cbce45" ratio="0.29978585" ratioLeft="280" ratioRight="654" relationship="4" relative="leftFolder">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@15023d2" ratio="0.2987616" ratioLeft="193" ratioRight="453" relationship="4" relative="leftFolder">
 <folder activePageID="org.eclipse.gef.ui.palette_view" appearance="2" expanded="2">
 <page content="org.eclipse.gef.ui.palette_view" label="Palette"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -164,71 +162,11 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.exerd"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/DSW/common.erdx"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" path="/DSW/common.erdx"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" path="/DSW/dsw.xdic"/>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/W:/DevnectFX/DSW/ERD/DSW/common.exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" uri="file:/W:/Projects/DevnectFX/DSW/ERD/DSW/common.exerd"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" uri="file:/W:/Projects/DevnectFX/DSW/ERD/DSW/dsw.xdic"/>
 </editors>
 <item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="1"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="2"/>
-<item historyLabel="common.erdx" index="1"/>
-<item historyLabel="dsw.xdic" index="2"/>
-<item historyLabel="common.erdx" index="1"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="1"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="3">
-<position/>
-</item>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="4"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="4"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="4"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="common.erdx" index="5"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="6"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="6"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="6"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="6"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="6"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="6"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="6"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="6"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="7"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="8"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="9"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="9"/>
-<item historyLabel="common.exerd" index="0"/>
-<item historyLabel="dsw.xdic" index="10"/>
-<item active="true" historyLabel="common.exerd" index="11"/>
+<item active="true" historyLabel="dsw.xdic" index="1"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -246,44 +184,11 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" tooltip="W:\DevnectFX\DSW\ERD\DSW\common.exerd">
-<persistable uri="file:/W:/DevnectFX/DSW/ERD/DSW/common.exerd"/>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" tooltip="W:\Projects\DevnectFX\DSW\ERD\DSW\dsw.xdic">
+<persistable uri="file:/W:/Projects/DevnectFX/DSW/ERD/DSW/dsw.xdic"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="dsw.xdic" tooltip="DSW/dsw.xdic">
-<persistable path="/DSW/dsw.xdic"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" tooltip="DSW/common.exerd">
-<persistable path="/DSW/common.exerd"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="common.erdx" tooltip="DSW/common.erdx">
-<persistable path="/DSW/common.erdx"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common_ibm2.exerd" tooltip="DSW/common_ibm2.exerd">
-<persistable path="/DSW/common_ibm2.exerd"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common_oracle.exerd" tooltip="DSW/common_oracle.exerd">
-<persistable path="/DSW/common_oracle.exerd"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common2.exerd" tooltip="DSW/common2.exerd">
-<persistable path="/DSW/common2.exerd"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="org.eclipse.core.resources.prefs" tooltip="DSW/.settings/org.eclipse.core.resources.prefs">
-<persistable path="/DSW/.settings/org.eclipse.core.resources.prefs"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name=".project" tooltip="DSW/.project">
-<persistable path="/DSW/.project"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="study.exerd" tooltip="eXERD-Samples/study.exerd">
-<persistable path="/eXERD-Samples/study.exerd"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="pos.xdic" tooltip="eXERD-Samples/pos.xdic">
-<persistable path="/eXERD-Samples/pos.xdic"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.term.ui.editor2.TermDictionaryEditor2" name="public.xdic" tooltip="eXERD-Samples/public.xdic">
-<persistable path="/eXERD-Samples/public.xdic"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="pos.exerd" tooltip="eXERD-Samples/pos.exerd">
-<persistable path="/eXERD-Samples/pos.exerd"/>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.tomato.exerd.editor.DiagramEditor" name="common.exerd" tooltip="W:\Projects\DevnectFX\DSW\ERD\DSW\common.exerd">
+<persistable uri="file:/W:/Projects/DevnectFX/DSW/ERD/DSW/common.exerd"/>
 </file>
 </mruList>
 </workbench>

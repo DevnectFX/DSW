@@ -175,6 +175,7 @@
     <Compile Include="Sources\Core\Context\ILoginContext.cs" />
     <Compile Include="Sources\Core\Context\IUserContext.cs" />
     <Compile Include="Sources\Core\DynamicModelBinder.cs" />
+    <Compile Include="Sources\Utils\HttpFileEx.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
