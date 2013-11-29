@@ -6,7 +6,7 @@ using Nancy.Authentication.Forms;
 using Nancy.Conventions;
 using Nancy.Session;
 
-namespace DSW.Sources
+namespace DSW.Utils
 {
     public class DSWBoostrapper : DefaultNancyBootstrapper
     {

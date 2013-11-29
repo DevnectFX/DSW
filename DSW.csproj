@@ -175,6 +175,7 @@
     <Compile Include="Sources\Core\Context\ILoginContext.cs" />
     <Compile Include="Sources\Core\Context\IUserContext.cs" />
     <Compile Include="Sources\Core\DynamicModelBinder.cs" />
+    <Compile Include="Sources\Utils\HttpFileEx.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -234,8 +235,8 @@
   </ItemGroup>
   <Import Project="exports.xml" />
   <Target Name="CopyExportFiles" AfterTargets="Build">
-    <Message Text="Copy Export Files : @(ExportFile-&gt;'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
-    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile-&gt;'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Message Text="Copy Export Files : @(ExportFile->'%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" Importance="High" />
+    <Copy SourceFiles="@(ExportFile)" DestinationFiles="@(ExportFile->'$(TargetDir)%(PrefixPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
   </Target>
   <Target Name="ClearExportFiles" AfterTargets="Clean">
     <Message Text="Remove Export Directory : $(TargetDir)%(ExportFile.PrefixPath)" Importance="High" />
@@ -256,8 +257,5 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
-  <ItemGroup>
-    <Folder Include="Views\User\" />
-    <Folder Include="Sources\Services\User\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
