@@ -154,7 +154,7 @@
     <Compile Include="Sources\Core\Model.cs" />
     <Compile Include="Sources\Modules\TestModule.cs" />
     <Compile Include="Sources\SelfHostingStartup.cs" />
-    <Compile Include="Sources\DSWBoostrapper.cs" />
+    <Compile Include="Sources\DSWBootstrapper.cs" />
     <Compile Include="Sources\Core\ViewEngines\DSWRazorViewBase.cs" />
     <Compile Include="Sources\Modules\AdminModule.cs" />
     <Compile Include="Sources\Core\DSWModule.cs" />
@@ -222,8 +222,8 @@
       <LastGenOutput>Test2.cs</LastGenOutput>
     </None>
     <None Include="Views\User\UserRegistForm.cshtml" />
-    <None Include="Views\User\UserLayout.cshtml" />
-    <None Include="Views\User\UserList.cshtml" />
+    <None Include="Views\User\UserLayout_.cshtml" />
+    <None Include="Views\User\UserList_.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="x64\SQLite.Interop.dll">

@@ -37,7 +37,7 @@ namespace DSW.ViewEngines.Razor
                 result += "PopupLayout.cshtml";
             else
                 result += "Layout.cshtml";
-
+            
             return result;
         }
 
@@ -47,6 +47,7 @@ namespace DSW.ViewEngines.Razor
 
             if (string.IsNullOrEmpty(body) == true)
                 Layout = GetLayout(RenderContext);
+        
         }
 
         public UserInfo User
