@@ -11,7 +11,7 @@ namespace DSW
         {
         }
         
-        public dynamic DB
+        protected dynamic DB
         {
             get
             {

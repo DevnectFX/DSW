@@ -30,7 +30,13 @@ namespace DSW
                         context = Nancy.TinyIoc.TinyIoCContainer.Current.Resolve<TContext>();
                 }
             }
-         }
+        }
+
+        protected TService InjectService<TService>()
+            where TService : DSWService
+        {
+            return Nancy.TinyIoc.TinyIoCContainer.Current.Resolve<TService>();
+        }
 
         public IMenuContext MenuContext
         {
