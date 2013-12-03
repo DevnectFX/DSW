@@ -152,7 +152,9 @@
     <Compile Include="Sources\Context\MenuContext.cs" />
     <Compile Include="Sources\Core\Context\IMenuContext.cs" />
     <Compile Include="Sources\Core\Model.cs" />
+    <Compile Include="Sources\FormatterExtensions.cs" />
     <Compile Include="Sources\Modules\TestModule.cs" />
+    <Compile Include="Sources\Responses\StreamResponse.cs" />
     <Compile Include="Sources\SelfHostingStartup.cs" />
     <Compile Include="Sources\DSWBootstrapper.cs" />
     <Compile Include="Sources\Core\ViewEngines\DSWRazorViewBase.cs" />
