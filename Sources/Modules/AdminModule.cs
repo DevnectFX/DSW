@@ -16,7 +16,7 @@ namespace DSW.Modules
     public class AdminModule : DSWModule
     {
         public AdminModule()
-            : base("/admin")
+            : base("/dsw/admin")                                    // 농기구와 중복으로 임시로 /dsw를 넣음
         {
             this.RequiresAuthentication();                        // 인증을 해야 접근 가능하도록 등록
             
