@@ -49,8 +49,10 @@ namespace DSW.Context
 
         public Guid? Login(string id, string passwd)
         {
-            var userInfo = userService.GetUserInfo(id, passwd);
-            if (id == "admin" && passwd == "admin1234")
+            // RentalFarm 개발로 인해 임시로 막아둠.
+            //var userInfo = userService.GetUserInfo(id, passwd);
+            UserInfo userInfo = null;
+            if (id == "admin" && passwd == "impacsys")
                 userInfo = GetAdminInfo();
 
             if (userInfo == null)
